@@ -15,47 +15,32 @@
 
 {% block body %}
     <h1>sf - Online Store</h1>
-    {% dump(categories) %}
+    <ul>
     {% for category in categories %}
         {% if not category.parent %}
-            <b>{{ category }}</b>
-            <br/>
+            <li>{{ category }}</li>
+
             {% set id = category.id %}
-
-            {% for category in categories %}
-
-                {% if category.parent %}
-
-                    {% set pid = category.parent.id %}
-                    {#pid: {{ pid }}<br/>#}
-                    {% if id == pid %}
-                        {% if not category.parent.parent %}
-                            |---<b>{{ category }}</b><br/>
-                        {% endif %}
-                    {% endif %}
+            <ul>
+                {% for category in categories %}
+                    {% if category.parent and not category.parent.parent and category.parent.id == id %}
+                        <li>{{ category }}</li>
 
                     {% set ppid = category.id %}
+                    <ol>
                     {% for category in categories %}
 
-                        {% if category.parent %}
-                            {% if category.parent.parent %}
-                                {% if id == category.parent.parent.id and ppid == category.parent.id %}
-                                    |------{{ category}}<br/>
-                                {% endif %}
-                            {% endif %}
+                        {% if category.parent and category.parent.parent and category.parent.id == ppid and category.parent.parent.id == id %}
+                            <li>{{ category}}</li>
                         {% endif %}
                     {% endfor %}
-
+                    </ol>
                 {% endif %}
-
             {% endfor %}
+            </ul>
         {% endif %}
     {% endfor %}
-
-
-
-
-
+    </ul>
     <!-- Header -->
     {% block header %}
         {#{{ parent() }}#}
