@@ -8,23 +8,34 @@
 
 namespace App\Controller;
 
-use App\Repository\CategoryRepository;
+//use Sensio\Bundle\FrameworkExtraBundle\Configuration\ParamConverter;
 use Symfony\Component\Routing\Annotation\Route;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 
 use App\Entity\Category;
-use App\Repository;
 
-use Doctrine\ORM\EntityRepository;
+use App\Entity\Product;
+
 class CatalogController extends Controller
 {
     /**
      * @Route("/cat", name="cat")
      */
-    public function cat() //CategoryRepository $categoryRepository)
+    public function cat()
     {
         $categories = $this->getDoctrine()->getRepository(Category::class)->findAll();
         return $this->render('catalog/shop.html.twig', compact('categories'));
 
+    }
+
+    /**
+     * @Route("/products/{productid}", name="product")
+    //     *@ParamConverter("product", options={"mapping" : {"productid" : "id"}})
+     */
+    public function product($productid)
+    {
+        $products = $this->getDoctrine()->getRepository(Product::class)
+            ->findBy(['category' => $productid]);
+        return $this->render('catalog/index.html.twig', compact('products')); //'catalog/shop.html.twig', compact('categories'));
     }
 }

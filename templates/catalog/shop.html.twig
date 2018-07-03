@@ -15,10 +15,10 @@
 
 {% block body %}
     <h1>sf - Online Store</h1>
-    <ul>
+    <ul class="cat_menu">
     {% for category in categories %}
         {% if not category.parent %}
-            <li>{{ category }}</li>
+            <li class="hassubs">{{ category }}</li>
 
             {% set id = category.id %}
             <ul>
@@ -29,9 +29,8 @@
                     {% set ppid = category.id %}
                     <ol>
                     {% for category in categories %}
-
                         {% if category.parent and category.parent.parent and category.parent.id == ppid and category.parent.parent.id == id %}
-                            <li>{{ category}}</li>
+                            <li><a href="{{ path('product', {'productid' : category.id}) }}">{{ category}}</a></li>
                         {% endif %}
                     {% endfor %}
                     </ol>
@@ -43,10 +42,6 @@
     </ul>
     <!-- Header -->
     {% block header %}
-        {#{{ parent() }}#}
     {% endblock %}
 
-    {#{{ include('product/_form.html.twig') }}#}
-
-    {#<a href="{{ path('product_index') }}">back to list</a>#}
 {% endblock %}
