@@ -14,7 +14,9 @@
 {% endblock %}
 
 {% block body %}
-    <h1>sf - Online Store</h1>
+    <div>
+        <span><b>sf - Online Store</b></span><span><a href="{{ path('cart') }}">My Cart</a></span>
+    </div>
     <ul class="cat_menu">
     {% for category in categories %}
         {% if not category.parent %}

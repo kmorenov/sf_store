@@ -1,0 +1,18 @@
+{% extends 'base.html.twig' %}
+{#{% use 'Symfony\Component\HttpFoundation\Request' %}#}
+{#{% set request = {{ Request::createFromGlobals() }} %}#}
+
+{% block body %}
+    <h1>Order</h1>
+    <form action="cart/order_confirm.html.twig">
+        {#<input type="hidden" name="productid" value="{{ product[0].id }}">#}
+        {#{{ product[0].model ~ ' ' ~ product[0].price }}#}
+
+
+        Product ID: {{ request.get('productid') }}<br/>
+        Quantity: {{ request.get('quantity') }}<br/>
+        Price: {{ request.get('price') }}<br/>
+        ORDER: {{ request.get('price') * request.get('quantity') }}<br/>
+        <button type="submit">Order</button>
+    </form>
+{% endblock %}

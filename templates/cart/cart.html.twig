@@ -1,0 +1,25 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <h1>Shopping Cart</h1>
+    {#<form action="{{ path('order') }}">#}
+        {% for p in cart %}
+            <form action="{{ path('cart') }}">
+                <input type="text" name="productid" value="{{ p.id }}" size="2">
+                <b>Model: </b> {{ p.model }}
+                <b>Price: </b> {{ p.price }}
+                <label><b>Quantity: </b><input type="number" id="qty" name="quantity"
+                                               {% if p.quantity is defined %}
+                                                   value="{{ p.quantity }}"
+                                               {% else %}
+                                                   value="1"
+                                               {% endif%}
+                                               min="1" max="5"></label>
+                <b>Total: </b>
+                <button type="submit">Update</button><br/>
+            </form>
+        {% endfor %}
+        {#<br/><button type="submit">Proceed to Checkout</button>#}
+    {#</form>#}
+    <a href="{{ path('category') }}">back to Categories</a>
+{% endblock %}
