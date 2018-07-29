@@ -105,22 +105,18 @@ class CatalogController extends Controller
         $cart = $session->get('cart');
 
         if ($request->get('quantity') && $cart){
-            $i = 0;
-            foreach ($cart as $c) {
-                foreach ($c as $key => $value) {
-                    if ($key == 'id' && $value == $request->get('productid')) {
-                        if (array_key_exists('quantity', $cart[$i])) {
-                            if ($cart[$i]['quantity'] != $request->get('quantity')) {
-                                $cart[$i]['quantity'] = $request->get('quantity');
-                                break;
-                            }
-                        }else{
-                            $cart[$i] += ['quantity' => $request->get('quantity')];
+            for ($i = 0; $i < count($cart); $i++) {
+                if ($cart[$i]['id'] == $request->get('productid')) {
+                    if (array_key_exists('quantity', $cart[$i])) {
+                        if ($cart[$i]['quantity'] != $request->get('quantity')) {
+                            $cart[$i]['quantity'] = $request->get('quantity');
                             break;
                         }
+                    }else{
+                        $cart[$i] += ['quantity' => $request->get('quantity')];
+                        break;
                     }
                 }
-                $i++;
             }
         }
         $session->set('cart', $cart);
