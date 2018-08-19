@@ -21,8 +21,4 @@ yarn-error.log
 .phpunit
 /phpunit.xml
 ###< symfony/phpunit-bridge ###
-.idea/dataSources.local.xml
-.idea/dataSources.xml
-.idea/php.xml
-.idea/sf_store.iml
-.idea/workspace.xml
+.idea/
