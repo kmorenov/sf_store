@@ -2,8 +2,22 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="ffeb915d-816b-417b-932a-e9c7576d70d9" name="Default" comment="">
+      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources.local.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.local.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/php.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/php.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sf_store.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/sf_store.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/composer.json" beforeDir="false" afterPath="$PROJECT_DIR$/composer.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/composer.lock" beforeDir="false" afterPath="$PROJECT_DIR$/composer.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/config/services.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/config/services.yaml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/index.php" beforeDir="false" afterPath="$PROJECT_DIR$/public/index.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Controller/CartController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/CartController.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Controller/CatalogController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/CatalogController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/symfony.lock" beforeDir="false" afterPath="$PROJECT_DIR$/symfony.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/cart/cart.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/cart/cart.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/cart/order.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/cart/order.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/catalog/shop.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/catalog/shop.html.twig" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -42,38 +56,90 @@
         <item name="schemas" type="d4e8921:DatabaseStructure$FamilyGroup" />
         <item name="sf_store: schema" type="c314c289:MysqlImplModel$Schema" />
       </path>
+      <path>
+        <item name="Database" type="3277223f:DatabaseStructure$DbRootGroup" />
+        <item name="sf_store@localhost" type="feb32156:DbDataSourceImpl" />
+        <item name="schemas" type="d4e8921:DatabaseStructure$FamilyGroup" />
+        <item name="sf_store: schema" type="c314c289:MysqlImplModel$Schema" />
+        <item name="category: table" type="98d5ac3d:MysqlImplModel$Table" />
+      </path>
+      <path>
+        <item name="Database" type="3277223f:DatabaseStructure$DbRootGroup" />
+        <item name="sf_store@localhost" type="feb32156:DbDataSourceImpl" />
+        <item name="schemas" type="d4e8921:DatabaseStructure$FamilyGroup" />
+        <item name="sf_store: schema" type="c314c289:MysqlImplModel$Schema" />
+        <item name="product: table" type="98d5ac3d:MysqlImplModel$Table" />
+      </path>
+      <path>
+        <item name="Database" type="3277223f:DatabaseStructure$DbRootGroup" />
+        <item name="symfony@localhost" type="feb32156:DbDataSourceImpl" />
+      </path>
+      <path>
+        <item name="Database" type="3277223f:DatabaseStructure$DbRootGroup" />
+        <item name="symfony@localhost" type="feb32156:DbDataSourceImpl" />
+        <item name="schemas" type="d4e8921:DatabaseStructure$FamilyGroup" />
+      </path>
+      <path>
+        <item name="Database" type="3277223f:DatabaseStructure$DbRootGroup" />
+        <item name="symfony@localhost" type="feb32156:DbDataSourceImpl" />
+        <item name="schemas" type="d4e8921:DatabaseStructure$FamilyGroup" />
+        <item name="symfony: schema" type="c314c289:MysqlImplModel$Schema" />
+      </path>
     </expand>
     <select />
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="CatalogController.php" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/Controller/CatalogController.php">
+      <file leaf-file-name="CartController.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/Controller/CartController.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="182">
-              <caret line="115" column="30" selection-start-line="101" selection-start-column="4" selection-end-line="124" selection-end-column="5" />
+            <state relative-caret-position="204">
+              <caret line="25" column="59" selection-start-line="25" selection-start-column="59" selection-end-line="25" selection-end-column="59" />
               <folding>
-                <element signature="e#118#186#0#PHP" expanded="true" />
-                <element signature="e#1102#1127#0#PHP" expanded="true" />
+                <element signature="e#32#55#0#PHP" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="cart.html.twig" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/templates/cart/cart.html.twig">
+      <file leaf-file-name=".gitignore" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/.gitignore">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="150">
-              <caret line="10" column="42" selection-start-line="10" selection-start-column="42" selection-end-line="10" selection-end-column="42" />
+            <state relative-caret-position="86">
+              <caret line="27" column="19" lean-forward="true" selection-start-line="27" selection-start-column="19" selection-end-line="27" selection-end-column="19" />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="order.html.twig" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/templates/cart/order.html.twig">
+      <file leaf-file-name="CartManager.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/Service/CartManager.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="210">
-              <caret line="14" column="72" selection-start-line="14" selection-start-column="72" selection-end-line="14" selection-end-column="72" />
+            <state relative-caret-position="464">
+              <caret line="45" column="1" selection-start-line="45" selection-start-column="1" selection-end-line="45" selection-end-column="1" />
+              <folding>
+                <element signature="e#111#134#0#PHP" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="index.html.twig" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/templates/cart/index.html.twig">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="300">
+              <caret line="20" column="38" selection-start-line="20" selection-start-column="38" selection-end-line="20" selection-end-column="38" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="CatalogController.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/Controller/CatalogController.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="884">
+              <caret line="81" column="28" selection-start-line="78" selection-end-line="85" selection-end-column="41" />
+              <folding>
+                <element signature="e#118#186#0#PHP" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -81,17 +147,26 @@
       <file leaf-file-name="shop.html.twig" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/templates/catalog/shop.html.twig">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="255">
-              <caret line="17" column="13" selection-start-line="17" selection-start-column="13" selection-end-line="17" selection-end-column="13" />
+            <state relative-caret-position="555">
+              <caret line="37" column="65" selection-start-line="37" selection-start-column="65" selection-end-line="37" selection-end-column="65" />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="index.html.twig" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/templates/catalog/index.html.twig">
+      <file leaf-file-name="order.html.twig" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/templates/cart/order.html.twig">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="75">
-              <caret line="5" selection-start-line="5" selection-end-line="5" />
+            <state relative-caret-position="270">
+              <caret line="18" column="50" selection-start-line="18" selection-start-column="50" selection-end-line="18" selection-end-column="50" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="article.html.twig" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/templates/main/article.html.twig">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="165">
+              <caret line="11" column="29" selection-start-line="11" selection-start-column="29" selection-end-line="11" selection-end-column="29" />
             </state>
           </provider>
         </entry>
@@ -104,6 +179,7 @@
       <find>pid</find>
       <find>cat_menu</find>
       <find>layout.html.php</find>
+      <find>getCart</find>
     </findStrings>
     <dirStrings>
       <dir>$PROJECT_DIR$/config</dir>
@@ -117,7 +193,6 @@
     <option name="CHANGED_PATHS">
       <list>
         <option value="$PROJECT_DIR$/src/Entity/Product.php" />
-        <option value="$PROJECT_DIR$/.env" />
         <option value="$PROJECT_DIR$/src/Entity/Category.php" />
         <option value="f1016a95-d930-4ca6-bfc1-b902e84e850a/schema/sf_store/table/category.sql" />
         <option value="$PROJECT_DIR$/src/Repository/CategoryRepository.php" />
@@ -127,14 +202,27 @@
         <option value="$PROJECT_DIR$/templates/catalog/cart.html.twig" />
         <option value="$PROJECT_DIR$/templates/catalog/order.html.twig" />
         <option value="$PROJECT_DIR$/templates/cart/order_confirm.html.twig" />
-        <option value="$PROJECT_DIR$/src/Controller/CartController.php" />
-        <option value="$PROJECT_DIR$/config/services.yaml" />
-        <option value="$PROJECT_DIR$/public/index.php" />
-        <option value="$PROJECT_DIR$/templates/cart/order.html.twig" />
-        <option value="$PROJECT_DIR$/templates/catalog/shop.html.twig" />
         <option value="$PROJECT_DIR$/templates/catalog/index.html.twig" />
+        <option value="$PROJECT_DIR$/templates/cart/order.html.twig" />
         <option value="$PROJECT_DIR$/templates/cart/cart.html.twig" />
+        <option value="$PROJECT_DIR$/src/Entity/Post.php" />
+        <option value="$PROJECT_DIR$/src/Model/PostTrait.php" />
+        <option value="$PROJECT_DIR$/src/Repository/PostRepository.php" />
+        <option value="$PROJECT_DIR$/src/Entity/Tag.php" />
+        <option value="$PROJECT_DIR$/src/Entity/PostImage.php" />
+        <option value="$PROJECT_DIR$/src/Repository/TagRepository.php" />
+        <option value="$PROJECT_DIR$/templates/main/index.html.twig" />
+        <option value="$PROJECT_DIR$/public/index.php" />
+        <option value="$PROJECT_DIR$/config/services.yaml" />
+        <option value="$PROJECT_DIR$/.env" />
+        <option value="$PROJECT_DIR$/src/Controller/MainController.php" />
         <option value="$PROJECT_DIR$/src/Controller/CatalogController.php" />
+        <option value="$PROJECT_DIR$/templates/catalog/shop.html.twig" />
+        <option value="$PROJECT_DIR$/templates/main/article.html.twig" />
+        <option value="$PROJECT_DIR$/src/Service/CartManager.php" />
+        <option value="$PROJECT_DIR$/src/Controller/CartController.php" />
+        <option value="$PROJECT_DIR$/templates/cart/index.html.twig" />
+        <option value="$PROJECT_DIR$/.gitignore" />
       </list>
     </option>
   </component>
@@ -246,11 +334,12 @@
       <path value="$PROJECT_DIR$/vendor/zendframework/zend-eventmanager" />
       <path value="$PROJECT_DIR$/vendor/symfony/test-pack" />
       <path value="$PROJECT_DIR$/vendor/symfony/dom-crawler" />
+      <path value="$PROJECT_DIR$/vendor/twig/extensions" />
     </include_path>
   </component>
   <component name="ProjectFrameBounds" extendedState="6">
-    <option name="width" value="1366" />
-    <option name="height" value="743" />
+    <option name="width" value="1352" />
+    <option name="height" value="739" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectView">
@@ -258,6 +347,7 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -295,6 +385,30 @@
             <path>
               <item name="sf_store" type="b2602c69:ProjectViewProjectNode" />
               <item name="sf_store" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="src" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="Entity" type="2a2b976b:PhpTreeStructureProvider$1" />
+            </path>
+            <path>
+              <item name="sf_store" type="b2602c69:ProjectViewProjectNode" />
+              <item name="sf_store" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="src" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="Form" type="2a2b976b:PhpTreeStructureProvider$1" />
+            </path>
+            <path>
+              <item name="sf_store" type="b2602c69:ProjectViewProjectNode" />
+              <item name="sf_store" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="src" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="Repository" type="2a2b976b:PhpTreeStructureProvider$1" />
+            </path>
+            <path>
+              <item name="sf_store" type="b2602c69:ProjectViewProjectNode" />
+              <item name="sf_store" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="src" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="Service" type="2a2b976b:PhpTreeStructureProvider$1" />
+            </path>
+            <path>
+              <item name="sf_store" type="b2602c69:ProjectViewProjectNode" />
+              <item name="sf_store" type="2a2b976b:PhpTreeStructureProvider$1" />
               <item name="templates" type="2a2b976b:PhpTreeStructureProvider$1" />
             </path>
             <path>
@@ -313,31 +427,65 @@
               <item name="sf_store" type="b2602c69:ProjectViewProjectNode" />
               <item name="sf_store" type="2a2b976b:PhpTreeStructureProvider$1" />
               <item name="templates" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="category" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="main" type="2a2b976b:PhpTreeStructureProvider$1" />
+            </path>
+            <path>
+              <item name="sf_store" type="b2602c69:ProjectViewProjectNode" />
+              <item name="sf_store" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="vendor" type="2a2b976b:PhpTreeStructureProvider$1" />
+            </path>
+            <path>
+              <item name="sf_store" type="b2602c69:ProjectViewProjectNode" />
+              <item name="sf_store" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="vendor" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="sensio" type="2a2b976b:PhpTreeStructureProvider$1" />
+            </path>
+            <path>
+              <item name="sf_store" type="b2602c69:ProjectViewProjectNode" />
+              <item name="sf_store" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="vendor" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="sensio" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="framework-extra-bundle" type="2a2b976b:PhpTreeStructureProvider$1" />
+            </path>
+            <path>
+              <item name="sf_store" type="b2602c69:ProjectViewProjectNode" />
+              <item name="sf_store" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="vendor" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="sensio" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="framework-extra-bundle" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="Request" type="2a2b976b:PhpTreeStructureProvider$1" />
+            </path>
+            <path>
+              <item name="sf_store" type="b2602c69:ProjectViewProjectNode" />
+              <item name="sf_store" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="vendor" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="sensio" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="framework-extra-bundle" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="Request" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="ParamConverter" type="2a2b976b:PhpTreeStructureProvider$1" />
             </path>
           </expand>
           <select />
         </subPane>
       </pane>
-      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="com.intellij.database.dataSource.DataSourceTemplate" value="DDL Data Source&#10;MySQL" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../../ok" />
+    <property name="com.intellij.database.dataSource.DataSourceTemplate" value="MySQL&#10;DDL Data Source" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../symfony" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
     <property name="nodejs_package_manager_path" value="npm" />
     <property name="settings.editor.selected.configurable" value="reference.webide.settings.project.settings.php" />
   </component>
   <component name="RecentsManager">
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="$PROJECT_DIR$/templates/cart" />
-    </key>
     <key name="CopyFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/templates/cart" />
       <recent name="$PROJECT_DIR$/templates/catalog" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/templates/cart" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -478,27 +626,118 @@
       <workItem from="1532772692926" duration="1270000" />
       <workItem from="1532781947229" duration="901000" />
       <workItem from="1532796269956" duration="3672000" />
-      <workItem from="1532860667263" duration="7091000" />
+      <workItem from="1532860667263" duration="11365000" />
+      <workItem from="1532899688152" duration="1478000" />
+      <workItem from="1532955984385" duration="7497000" />
+      <workItem from="1532984740394" duration="1861000" />
+      <workItem from="1533021417831" duration="6851000" />
+      <workItem from="1533043712376" duration="7844000" />
+      <workItem from="1533056982958" duration="2598000" />
+      <workItem from="1533071300360" duration="1156000" />
+      <workItem from="1533106036292" duration="602000" />
+      <workItem from="1533108768499" duration="638000" />
+      <workItem from="1533115736404" duration="610000" />
+      <workItem from="1533120620077" duration="1255000" />
+      <workItem from="1533124566666" duration="1865000" />
+      <workItem from="1533127355520" duration="1790000" />
+      <workItem from="1533129174382" duration="866000" />
+      <workItem from="1533155670151" duration="1432000" />
+      <workItem from="1533157657068" duration="626000" />
+      <workItem from="1533159647620" duration="739000" />
+      <workItem from="1533212322366" duration="731000" />
+      <workItem from="1533214131770" duration="1641000" />
+      <workItem from="1533215943244" duration="797000" />
+      <workItem from="1533218144183" duration="1050000" />
+      <workItem from="1533219958194" duration="853000" />
+      <workItem from="1533233118413" duration="1742000" />
+      <workItem from="1533236247147" duration="231000" />
+      <workItem from="1533240777136" duration="1815000" />
+      <workItem from="1533243083890" duration="613000" />
+      <workItem from="1533245784916" duration="727000" />
+      <workItem from="1533248575480" duration="1262000" />
+      <workItem from="1533251619364" duration="1191000" />
+      <workItem from="1533292115181" duration="820000" />
+      <workItem from="1533296083613" duration="1152000" />
+      <workItem from="1533297904369" duration="1044000" />
+      <workItem from="1533300791075" duration="1730000" />
+      <workItem from="1533303434593" duration="1676000" />
+      <workItem from="1533305641885" duration="992000" />
+      <workItem from="1533314931808" duration="1269000" />
+      <workItem from="1533316745330" duration="1787000" />
+      <workItem from="1533318563383" duration="1791000" />
+      <workItem from="1533320383669" duration="1787000" />
+      <workItem from="1533322191199" duration="888000" />
+      <workItem from="1533324025061" duration="628000" />
+      <workItem from="1533332233351" duration="652000" />
+      <workItem from="1533373077505" duration="670000" />
+      <workItem from="1533375249310" duration="1577000" />
+      <workItem from="1533377076382" duration="1291000" />
+      <workItem from="1533379503784" duration="732000" />
+      <workItem from="1533386636414" duration="1058000" />
+      <workItem from="1533388468083" duration="638000" />
+      <workItem from="1533390307218" duration="1780000" />
+      <workItem from="1533392257644" duration="1203000" />
+      <workItem from="1533394072140" duration="1130000" />
+      <workItem from="1533396226591" duration="1203000" />
+      <workItem from="1533398053988" duration="1158000" />
+      <workItem from="1533408335194" duration="1342000" />
+      <workItem from="1533410185970" duration="1328000" />
+      <workItem from="1533412578157" duration="637000" />
+      <workItem from="1533475860118" duration="2000" />
+      <workItem from="1533477046406" duration="590000" />
+      <workItem from="1533479204377" duration="2542000" />
+      <workItem from="1533483455343" duration="889000" />
+      <workItem from="1533484735049" duration="1309000" />
+      <workItem from="1533580593874" duration="3180000" />
+      <workItem from="1533583833997" duration="627000" />
+      <workItem from="1533584540195" duration="445000" />
+      <workItem from="1533585049252" duration="64000" />
+      <workItem from="1533593581370" duration="1600000" />
+      <workItem from="1533635219193" duration="11562000" />
+      <workItem from="1533661810683" duration="23000" />
+      <workItem from="1533691012976" duration="1026000" />
+      <workItem from="1533692109551" duration="3019000" />
+      <workItem from="1533727892073" duration="247000" />
+      <workItem from="1533736653782" duration="1201000" />
+      <workItem from="1533759851827" duration="8993000" />
+      <workItem from="1533823148147" duration="705000" />
+      <workItem from="1533842828683" duration="12021000" />
+      <workItem from="1533933122161" duration="2387000" />
+      <workItem from="1534166452084" duration="2290000" />
+      <workItem from="1534185736591" duration="5776000" />
+      <workItem from="1534243452076" duration="4908000" />
+      <workItem from="1534303947323" duration="9123000" />
+      <workItem from="1534356148070" duration="15246000" />
+      <workItem from="1534429312217" duration="4014000" />
+      <workItem from="1534441772327" duration="6917000" />
+      <workItem from="1534515711868" duration="4546000" />
+      <workItem from="1534530906989" duration="990000" />
+      <workItem from="1534542307882" duration="4041000" />
+      <workItem from="1534600513526" duration="2940000" />
+      <workItem from="1534638365055" duration="8206000" />
+      <workItem from="1534678069504" duration="5555000" />
+      <workItem from="1534694759203" duration="1774000" />
+      <workItem from="1534710055279" duration="4631000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="535391000" />
+    <option name="totallyTimeSpent" value="757378000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-1" y="0" width="1368" height="743" extended-state="6" />
     <editor active="true" />
     <layout>
       <window_info anchor="bottom" id="TODO" order="7" />
-      <window_info anchor="bottom" id="Event Log" order="10" sideWeight="0.5022727" side_tool="true" weight="0.3452188" />
+      <window_info anchor="bottom" id="Event Log" order="10" sideWeight="0.5037879" side_tool="true" weight="0.20097245" />
       <window_info anchor="bottom" id="Database Changes" order="9" show_stripe_button="false" />
-      <window_info id="npm" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Version Control" order="12" weight="0.32952693" />
       <window_info anchor="bottom" id="Run" order="3" weight="0.32901135" />
-      <window_info active="true" anchor="bottom" id="Terminal" order="11" sideWeight="0.49772727" visible="true" weight="0.23014587" />
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.2469697" />
+      <window_info id="npm" order="2" side_tool="true" />
+      <window_info active="true" anchor="bottom" id="Terminal" order="11" sideWeight="0.49621212" visible="true" weight="0.32901135" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.26060605" />
       <window_info anchor="bottom" id="Docker" order="8" show_stripe_button="false" />
-      <window_info anchor="right" id="Database" order="3" weight="0.23560606" />
+      <window_info anchor="right" id="Database" order="3" weight="0.15454546" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="3" side_tool="true" />
       <window_info anchor="bottom" id="Debug" order="4" weight="0.3987034" />
@@ -510,32 +749,32 @@
       <window_info anchor="bottom" id="SQL Generator" order="0" sideWeight="0.4992378" weight="0.32952693" />
       <window_info anchor="bottom" id="Message" order="1" />
       <window_info anchor="bottom" id="Cvs" order="5" weight="0.25" />
-      <window_info active="true" anchor="bottom" id="Database Console" order="13" visible="true" weight="0.32520324" />
-      <window_info anchor="bottom" id="Find" order="2" weight="0.3284553" />
+      <window_info anchor="bottom" id="Database Console" order="13" sideWeight="0.49772727" weight="0.3241491" />
+      <window_info anchor="bottom" id="Find" order="2" visible="true" weight="0.3273906" />
     </layout>
     <layout-to-restore>
-      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
+      <window_info active="true" anchor="bottom" id="Database Console" order="14" visible="true" weight="0.3241491" />
       <window_info anchor="bottom" id="Docker" order="8" show_stripe_button="false" />
       <window_info id="npm" order="2" side_tool="true" />
-      <window_info anchor="bottom" id="Run" order="3" weight="0.32901135" />
+      <window_info anchor="bottom" id="Inspection" order="6" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="5" weight="0.25" />
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.29924244" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.27348486" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info anchor="right" id="Commander" order="0" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="bottom" id="TODO" order="7" />
       <window_info anchor="bottom" id="PHP-CGI Server" order="9" />
+      <window_info anchor="bottom" id="Run" order="3" weight="0.32901135" />
       <window_info anchor="bottom" id="SQL Generator" order="0" sideWeight="0.4992378" weight="0.32952693" />
-      <window_info anchor="bottom" id="Message" order="1" />
+      <window_info anchor="bottom" id="Find" order="2" weight="0.3284553" />
       <window_info anchor="bottom" id="Debug" order="4" weight="0.3987034" />
-      <window_info anchor="right" id="Database" order="3" weight="0.23560606" />
-      <window_info active="true" anchor="bottom" id="Terminal" order="12" sideWeight="0.49772727" visible="true" weight="0.3452188" />
-      <window_info anchor="bottom" id="Event Log" order="11" sideWeight="0.5022727" side_tool="true" weight="0.3452188" />
+      <window_info anchor="bottom" id="Terminal" order="12" sideWeight="0.4969697" weight="0.4440843" />
+      <window_info anchor="bottom" id="Event Log" order="11" sideWeight="0.5030303" side_tool="true" weight="0.23014587" />
       <window_info anchor="bottom" id="Database Changes" order="10" show_stripe_button="false" />
       <window_info anchor="bottom" id="Version Control" order="13" weight="0.32952693" />
-      <window_info active="true" anchor="bottom" id="Database Console" order="14" visible="true" weight="0.32520324" />
-      <window_info anchor="bottom" id="Find" order="2" weight="0.3284553" />
-      <window_info anchor="bottom" id="Inspection" order="6" weight="0.4" />
+      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
+      <window_info anchor="bottom" id="Message" order="1" />
+      <window_info anchor="right" id="Database" order="3" visible="true" weight="0.23560606" />
       <window_info id="Favorites" order="3" side_tool="true" />
     </layout-to-restore>
   </component>
@@ -550,273 +789,13 @@
       <breakpoints>
         <line-breakpoint enabled="true" type="php">
           <url>file://$PROJECT_DIR$/public/index.php</url>
-          <line>34</line>
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="php">
-          <url>file://$PROJECT_DIR$/src/Controller/CatalogController.php</url>
-          <line>103</line>
-          <option name="timeStamp" value="1" />
+          <line>37</line>
         </line-breakpoint>
       </breakpoints>
       <option name="time" value="2" />
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/Entity/Product.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="300">
-          <caret line="20" column="7" selection-start-line="20" selection-start-column="7" selection-end-line="20" selection-end-column="7" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/.env">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="330">
-          <caret line="22" column="58" selection-start-line="22" selection-start-column="58" selection-end-line="22" selection-end-column="58" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Entity/Category.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2010">
-          <caret line="134" column="21" selection-start-line="134" selection-start-column="21" selection-end-line="134" selection-end-column="21" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Entity/Product.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="300">
-          <caret line="20" column="7" selection-start-line="20" selection-start-column="7" selection-end-line="20" selection-end-column="7" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Entity/Category.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1980">
-          <caret line="134" column="21" selection-start-line="134" selection-start-column="21" selection-end-line="134" selection-end-column="21" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Entity/Product.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="300">
-          <caret line="20" column="7" selection-start-line="20" selection-start-column="7" selection-end-line="20" selection-end-column="7" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/.env">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="330">
-          <caret line="22" column="58" selection-start-line="22" selection-start-column="58" selection-end-line="22" selection-end-column="58" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="das://f1016a95-d930-4ca6-bfc1-b902e84e850a/schema/sf_store/table/category.sql">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="15">
-          <caret line="1" column="13" selection-start-line="1" selection-start-column="13" selection-end-line="1" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$APPLICATION_CONFIG_DIR$/consoles/db/f1016a95-d930-4ca6-bfc1-b902e84e850a/console.sql">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="15">
-          <caret line="1" column="11" lean-forward="true" selection-start-line="1" selection-start-column="11" selection-end-line="1" selection-end-column="11" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$USER_HOME$/Documents/PHP-related/OneTech/index.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="15">
-          <caret line="24" column="4" selection-start-line="23" selection-end-line="25" selection-end-column="27" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$USER_HOME$/Documents/PHP-related/OneTech/shop.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="15">
-          <caret line="158" column="55" selection-start-line="158" selection-start-column="40" selection-end-line="158" selection-end-column="55" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="das://f1016a95-d930-4ca6-bfc1-b902e84e850a/schema/sf_store/table/product/index/idx_d34a04ad12469de2">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="15">
-          <caret line="1" column="13" selection-start-line="1" selection-start-column="13" selection-end-line="1" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="das://f1016a95-d930-4ca6-bfc1-b902e84e850a/schema/sf_store/table/product.sql">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="150">
-          <caret line="10" column="13" selection-start-line="10" selection-start-column="13" selection-end-line="10" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Repository/CategoryRepository.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="60">
-          <caret line="4" column="4" selection-start-line="4" selection-start-column="4" selection-end-line="4" selection-end-column="4" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Entity/Category.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="510">
-          <caret line="75" column="32" selection-start-line="75" selection-start-column="32" selection-end-line="75" selection-end-column="32" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/templates/product/show.html.twig">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-296" />
-      </provider>
-    </entry>
-    <entry file="das://f1016a95-d930-4ca6-bfc1-b902e84e850a/schema/sf_store/table/category">
-      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
-        <state>
-          <filtering enabled="true" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/templates/product/index.html.twig">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-101">
-          <caret line="16" column="17" selection-start-line="16" selection-start-column="17" selection-end-line="16" selection-end-column="17" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Controller/ProductController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="15">
-          <caret line="4" column="4" selection-start-line="4" selection-start-column="4" selection-end-line="4" selection-end-column="4" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="das://f1016a95-d930-4ca6-bfc1-b902e84e850a/schema/sf_store/table/product">
-      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
-        <state>
-          <filtering enabled="true" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/vendor/symfony/http-foundation/Session/SessionInterface.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-2141">
-          <caret line="20" column="10" selection-start-line="20" selection-start-column="10" selection-end-line="20" selection-end-column="10" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/config/services.yaml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="259">
-          <caret line="28" lean-forward="true" selection-start-line="28" selection-end-line="28" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/vendor/symfony/http-foundation/Session/Session.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-45">
-          <caret line="24" column="6" selection-start-line="24" selection-start-column="6" selection-end-line="24" selection-end-column="6" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Controller/CartController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="66">
-          <caret line="13" selection-start-line="13" selection-end-line="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Controller/CategoryController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-840">
-          <caret line="4" column="4" selection-start-line="4" selection-start-column="4" selection-end-line="4" selection-end-column="4" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="uml://DATABASE/f1016a95-d930-4ca6-bfc1-b902e84e850a.TABLE:sf_store.category">
-      <provider selected="true" editor-type-id="UmlEditorProvider">
-        <state>
-          <ID>DATABASE</ID>
-          <OriginalElement>f1016a95-d930-4ca6-bfc1-b902e84e850a.TABLE:sf_store.category</OriginalElement>
-          <nodes>
-            <node x="" y="">f1016a95-d930-4ca6-bfc1-b902e84e850a.TABLE:sf_store.category</node>
-          </nodes>
-          <notes />
-          <edges />
-          <settings layout="Hierarchic Group" zoom="1.0" x="92.0" y="65.0" />
-          <SelectedNodes />
-          <Categories>
-            <Category>Columns</Category>
-          </Categories>
-          <SCOPE>All</SCOPE>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Entity/Product.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="321">
-          <caret line="48" column="27" selection-start-line="48" selection-start-column="20" selection-end-line="48" selection-end-column="30" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/templates/base.html.twig">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="180">
-          <caret line="12" selection-start-line="12" selection-end-line="12" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Kernel.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="90">
-          <caret line="11" selection-start-line="11" selection-end-line="11" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/vendor/symfony/http-foundation/Request.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="96">
-          <caret line="282" selection-start-line="282" selection-end-line="282" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/vendor/symfony/http-foundation/HeaderBag.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="114">
-          <caret line="64" selection-start-line="64" selection-end-line="64" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/vendor/symfony/http-foundation/ResponseHeaderBag.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="141">
-          <caret line="56" selection-start-line="56" selection-end-line="56" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/vendor/symfony/http-foundation/Response.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="96">
-          <caret line="358" selection-start-line="358" selection-end-line="358" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/public/index.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="230">
-          <caret line="38" selection-start-line="38" selection-end-line="38" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/vendor/symfony/dependency-injection/Container.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="114">
-          <caret line="219" selection-start-line="219" selection-end-line="219" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/vendor/composer/ClassLoader.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="5175">
@@ -894,42 +873,240 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/templates/cart/order.html.twig">
+    <entry file="file://$PROJECT_DIR$/src/Entity/Product.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="210">
-          <caret line="14" column="72" selection-start-line="14" selection-start-column="72" selection-end-line="14" selection-end-column="72" />
+        <state relative-caret-position="6">
+          <caret line="48" column="27" selection-start-line="48" selection-start-column="20" selection-end-line="48" selection-end-column="30" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/templates/catalog/index.html.twig">
+    <entry file="jar://$APPLICATION_HOME_DIR$/lib/phpstorm.jar!/resources/html5-schema/html5/web-forms2.rnc">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="75">
-          <caret line="5" selection-start-line="5" selection-end-line="5" />
+        <state relative-caret-position="148">
+          <caret line="264" column="22" selection-start-line="264" selection-start-column="22" selection-end-line="264" selection-end-column="22" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/templates/catalog/shop.html.twig">
+    <entry file="das://0b17aa44-4eb6-4a13-9a08-37ead7a2c335/schema/symfony/table/comment">
+      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
+        <state>
+          <filtering enabled="true" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Repository/TagRepository.php" />
+    <entry file="das://0b17aa44-4eb6-4a13-9a08-37ead7a2c335/schema/symfony/table/post_tag">
+      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
+        <state>
+          <filtering enabled="true" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Repository/CategoryRepository.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="255">
-          <caret line="17" column="13" selection-start-line="17" selection-start-column="13" selection-end-line="17" selection-end-column="13" />
+        <state relative-caret-position="-35" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/vendor/sensio/framework-extra-bundle/Request/ParamConverter/DoctrineParamConverter.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="306">
+          <caret line="87" column="9" selection-start-line="87" selection-start-column="9" selection-end-line="87" selection-end-column="9" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="das://0b17aa44-4eb6-4a13-9a08-37ead7a2c335/schema/symfony/table/category.sql">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="120">
+          <caret line="8" column="13" selection-start-line="8" selection-start-column="13" selection-end-line="8" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="das://0b17aa44-4eb6-4a13-9a08-37ead7a2c335/schema/symfony/table/category/index/idx_64c19c1727aca70">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="15">
+          <caret line="1" column="13" selection-start-line="1" selection-start-column="13" selection-end-line="1" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="das://0b17aa44-4eb6-4a13-9a08-37ead7a2c335/schema/symfony/table/category">
+      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
+        <state>
+          <filtering enabled="true" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/index.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="495">
+          <caret line="36" selection-start-line="36" selection-end-line="36" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/.env">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="271">
+          <caret line="22" column="58" selection-start-line="22" selection-start-column="58" selection-end-line="22" selection-end-column="58" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="das://0b17aa44-4eb6-4a13-9a08-37ead7a2c335/schema/symfony/table/post">
+      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
+        <state>
+          <filtering enabled="true" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="das://0b17aa44-4eb6-4a13-9a08-37ead7a2c335/schema/symfony/table/tag">
+      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
+        <state>
+          <filtering enabled="true" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/config/services.yaml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="334">
+          <caret line="30" column="20" selection-start-line="30" selection-start-column="20" selection-end-line="30" selection-end-column="20" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Controller/MainController.php" />
+    <entry file="file://$PROJECT_DIR$/src/Entity/Tag.php" />
+    <entry file="file://$PROJECT_DIR$/src/Entity/Post.php" />
+    <entry file="file://$PROJECT_DIR$/src/Entity/PostImage.php" />
+    <entry file="file://$PROJECT_DIR$/src/Model/PostTrait.php" />
+    <entry file="file://$PROJECT_DIR$/src/Repository/PostRepository.php" />
+    <entry file="das://f1016a95-d930-4ca6-bfc1-b902e84e850a/schema/sf_store/table/product">
+      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
+        <state>
+          <filtering enabled="true" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Controller/CategoryController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-9">
+          <caret line="4" column="4" selection-start-line="4" selection-start-column="4" selection-end-line="4" selection-end-column="4" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Controller/ProductController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="15">
+          <caret line="4" column="4" selection-start-line="4" selection-start-column="4" selection-end-line="4" selection-end-column="4" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Entity/Category.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-162">
+          <caret line="75" column="32" selection-start-line="75" selection-start-column="32" selection-end-line="75" selection-end-column="32" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="das://f1016a95-d930-4ca6-bfc1-b902e84e850a/schema/sf_store/table/category">
+      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
+        <state>
+          <filtering enabled="true" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/templates/cart/cart.html.twig">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="150">
-          <caret line="10" column="42" selection-start-line="10" selection-start-column="42" selection-end-line="10" selection-end-column="42" />
+        <state relative-caret-position="300">
+          <caret line="20" column="59" selection-start-line="20" selection-start-column="47" selection-end-line="20" selection-end-column="62" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/main/article.html.twig">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="165">
+          <caret line="11" column="29" selection-start-line="11" selection-start-column="29" selection-end-line="11" selection-end-column="29" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/catalog/index.html.twig">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-150">
+          <caret line="5" selection-start-line="5" selection-end-line="5" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/main/index.html.twig">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="255">
+          <caret line="17" column="14" selection-start-line="17" selection-start-column="14" selection-end-line="17" selection-end-column="14" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/catalog/shop.html.twig">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="555">
+          <caret line="37" column="65" selection-start-line="37" selection-start-column="65" selection-end-line="37" selection-end-column="65" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/cart/order.html.twig">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="270">
+          <caret line="18" column="50" selection-start-line="18" selection-start-column="50" selection-end-line="18" selection-end-column="50" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Service/CartManager.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="464">
+          <caret line="45" column="1" selection-start-line="45" selection-start-column="1" selection-end-line="45" selection-end-column="1" />
+          <folding>
+            <element signature="e#111#134#0#PHP" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/cart/index.html.twig">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="300">
+          <caret line="20" column="38" selection-start-line="20" selection-start-column="38" selection-end-line="20" selection-end-column="38" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/Controller/CatalogController.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="182">
-          <caret line="115" column="30" selection-start-line="101" selection-start-column="4" selection-end-line="124" selection-end-column="5" />
+        <state relative-caret-position="884">
+          <caret line="81" column="28" selection-start-line="78" selection-end-line="85" selection-end-column="41" />
           <folding>
             <element signature="e#118#186#0#PHP" expanded="true" />
-            <element signature="e#1102#1127#0#PHP" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Controller/.gitignore">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Entity/.gitignore">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Controller/CartController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="204">
+          <caret line="25" column="59" selection-start-line="25" selection-start-column="59" selection-end-line="25" selection-end-column="59" />
+          <folding>
+            <element signature="e#32#55#0#PHP" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/config/packages/twig_extensions.yaml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="150">
+          <caret line="10" lean-forward="true" selection-start-line="10" selection-end-line="10" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/.gitignore">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="86">
+          <caret line="27" column="19" lean-forward="true" selection-start-line="27" selection-start-column="19" selection-end-line="27" selection-end-column="19" />
         </state>
       </provider>
     </entry>

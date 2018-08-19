@@ -11,5 +11,15 @@
       <user-name>root</user-name>
       <introspection-schemas>*:sf_store</introspection-schemas>
     </data-source>
+    <data-source name="symfony@localhost" uuid="0b17aa44-4eb6-4a13-9a08-37ead7a2c335">
+      <database-info product="MySQL" version="5.7.23-0ubuntu0.16.04.1" jdbc-version="4.0" driver-name="MySQL Connector Java" driver-version="mysql-connector-java-5.1.46 ( Revision: 9cc87a48e75c2d2e87c1a293b2862ce651cb256e )">
+        <extra-name-characters>#@</extra-name-characters>
+        <identifier-quote-string>`</identifier-quote-string>
+      </database-info>
+      <case-sensitivity plain-identifiers="exact" quoted-identifiers="exact" />
+      <secret-storage>master_key</secret-storage>
+      <user-name>root</user-name>
+      <introspection-schemas>*:symfony</introspection-schemas>
+    </data-source>
   </component>
 </project>

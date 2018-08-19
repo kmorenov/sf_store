@@ -33,6 +33,10 @@
                     {% for category in categories %}
                         {% if category.parent and category.parent.parent and category.parent.id == ppid and category.parent.parent.id == id %}
                             <li><a href="{{ path('product', {'productid' : category.id}) }}">{{ category}}</a></li>
+                                {#{{ dump(category.products) }}#}
+                                {% for cat in category.products %}
+                                    <ul><a href="{{ path('article', {'productid' : cat.id}) }}">{{ cat.model ~ ' ' ~ cat.price}}</a></ul>
+                                {% endfor %}
                         {% endif %}
                     {% endfor %}
                     </ol>

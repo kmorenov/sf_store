@@ -23,12 +23,14 @@ use Symfony\Component\HttpFoundation\Session\Session;
 
 class CatalogController extends Controller
 {
+    public $cart;
     /**
      * @Route("/cat", name="category")
      */
     public function cat()
     {
         $categories = $this->getDoctrine()->getRepository(Category::class)->findAll();
+        dump($categories);
         return $this->render('catalog/shop.html.twig', compact('categories'));
 
     }
@@ -73,10 +75,12 @@ class CatalogController extends Controller
 
         if ($newitem) {
             if (!$cart) $cart = [];
+            dump($product->getId());
             array_push($cart, [
                 'id' => $product->getId(),
                 'model' => $product->getModel(),
                 'price' => $product->getPrice(),
+                'quantity' => 1
             ]);
 
             $session->set('cart', $cart);
@@ -86,27 +90,44 @@ class CatalogController extends Controller
     }
 
     /**
-     * @Route("/order/{id}", name="order")
+     * @Route("/order", name="order")
      */
-/*    public function ordered($id)
+    public function ordered(Request $request)
     {
-        $request = Request::createFromGlobals();
+/*        $request = Request::createFromGlobals();
         dump($request);
-        $product = $this->getDoctrine()->getRepository(Product::class)->findBy(['id' => $id]);
-        return $this->render('cart/order.html.twig', compact('request')); //'product'));
-    }*/
+        $product = $this->getDoctrine()->getRepository(Product::class)->findBy(['id' => $id]);*/
+        $this->add_to_cart($request);
+        dump($this->cart);
+        dump($request);
+        return $this->render('cart/order.html.twig', ['cart' => $this->cart]); //'request')); //'product'));
+    }
 
-    /**
+    /*
      * @Route("/cart", name="cart")
      */
     public function cart(Request $request)
     {
+        $this->add_to_cart($request);
+        dump($this->cart);
+
+        return $this->render('cart/cart.html.twig', ['cart' => $this->cart]);
+//        return $this->render('cart/cart.html.twig', compact('cart'));
+//        return $this->render('cart/order.html.twig', compact('cart'));
+    }
+
+
+    private function add_to_cart($request)  //Request $request)
+    {
         $session = $this->get('session');
         $cart = $session->get('cart');
 
-        if ($request->get('quantity') && $cart){
+        dump($cart);
+        dump($request->get('productid'));
+        if ($cart){ // && $request->get('quantity')){
             for ($i = 0; $i < count($cart); $i++) {
                 if ($cart[$i]['id'] == $request->get('productid')) {
+                    echo 'Matched';
                     if (array_key_exists('quantity', $cart[$i])) {
                         if ($cart[$i]['quantity'] != $request->get('quantity')) {
                             $cart[$i]['quantity'] = $request->get('quantity');
@@ -119,8 +140,16 @@ class CatalogController extends Controller
                 }
             }
         }
-        $session->set('cart', $cart);
 
-        return $this->render('cart/cart.html.twig', compact('cart'));
+//        if ($cart && isset($cart[$request->get('productid')])) {cd
+//            $cart[$request->get('productid')] += $request->get('quantity');
+//        } else {
+//            $cart[$request->get('productid')] = $request->get('quantity');
+//
+//        }
+
+        $session->set('cart', $cart);
+        return $this->cart = $cart;
     }
+
 }

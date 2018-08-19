@@ -9,10 +9,18 @@
         {#{{ product[0].model ~ ' ' ~ product[0].price }}#}
 
 
-        Product ID: {{ request.get('productid') }}<br/>
-        Quantity: {{ request.get('quantity') }}<br/>
-        Price: {{ request.get('price') }}<br/>
-        ORDER: {{ request.get('price') * request.get('quantity') }}<br/>
+        {% dump cart %}
+
+        {% set i = 0 %}
+        {% for p in cart %}
+            {#{% if p.quantity is defined %}#}
+            Product ID: {{ p.id }}
+            Price: {{ p.price }}
+            Quantity: {{ p.quantity }} <br/>{# [i][p.id] }}#}
+            {#{% set i = i+1 %}#}
+            {#{% endif %}#}
+
+        {% endfor %}
         <button type="submit">Order</button>
     </form>
 {% endblock %}

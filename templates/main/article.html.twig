@@ -1,0 +1,20 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <style>
+        .example-wrapper { margin: 1em auto; max-width: 800px; width: 95%; font: 18px/1.5 sans-serif; }
+        .example-wrapper code { background: #F5F5F5; padding: 2px 6px; }
+    </style>
+    <div class="example-wrapper">
+        <h1> {{ product.manufacturer }}✅</h1>
+        <form action="{{ path('add_to_cart',{'product': product.id}) }}">
+        {#<b>Model: </b>{{ product.model }}#}
+        {#<b>Price: </b>{{ product.price }}#}
+            <b>Model: </b><input type="text" name="model" value="{{ product.model }}">
+            <b>Price: </b><input type="number" name="price" value="{{ product.price }}">
+            <b>Quantity: </b><input type="number" name="quantity" value="1" min="1" max="5">
+            <button type="submit">Add</button>
+        </form>
+    </div>
+
+{% endblock %}
