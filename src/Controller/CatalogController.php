@@ -30,7 +30,6 @@ class CatalogController extends Controller
     public function cat()
     {
         $categories = $this->getDoctrine()->getRepository(Category::class)->findAll();
-        dump($categories);
         return $this->render('catalog/shop.html.twig', compact('categories'));
 
     }

@@ -10,11 +10,12 @@
         <form action="{{ path('add_to_cart',{'product': product.id}) }}">
         {#<b>Model: </b>{{ product.model }}#}
         {#<b>Price: </b>{{ product.price }}#}
-            <b>Model: </b><input type="text" name="model" value="{{ product.model }}">
-            <b>Price: </b><input type="number" name="price" value="{{ product.price }}">
+            <b>Model: </b><input type="text" name="model" value="{{ product.model }}" disabled="disabled">
+            <b>Price: </b><input type="number" name="price" value="{{ product.price }}" disabled="true">
             <b>Quantity: </b><input type="number" name="quantity" value="1" min="1" max="5">
             <button type="submit">Add</button>
         </form>
+        <a href="{{ path('category') }}">back to Categories</a>
     </div>
 
 {% endblock %}
