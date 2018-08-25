@@ -33,7 +33,7 @@ if ($trustedHosts = $_SERVER['TRUSTED_HOSTS'] ?? false) {
 }
 
 
-session_start();
+//session_start();
 
 $kernel = new Kernel($env, $debug);
 $request = Request::createFromGlobals();
