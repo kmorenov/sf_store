@@ -4,29 +4,47 @@
 
 {% block body %}
     <style>
-        .example-wrapper { margin: 1em auto; max-width: 800px; width: 95%; font: 18px/1.5 sans-serif; }
-        .example-wrapper code { background: #F5F5F5; padding: 2px 6px; }
+        .example-wrapper {
+            margin: 1em auto;
+            max-width: 800px;
+            width: 95%;
+            font: 18px/1.5 sans-serif;
+        }
+
+        .example-wrapper code {
+            background: #F5F5F5;
+            padding: 2px 6px;
+        }
     </style>
 
     <div class="example-wrapper">
 
         Cart:
         <ul>
-            {%  set total = 0 %}
-            {% for item in cart %}
-                {% set total = total + item.product.price * item.quantity %}
-                <form action="{{ path('remove_from_cart',{'product': item.product.id}) }}">
+            <form action="{{ path('order') }}">
+                {% set total = 0 %}
+                {% for item in cart %}
+                    {% set total = total + item.product.price * item.quantity %}
+                    {#<form action="{{ path('remove_from_cart',{'product': item.product.id}) }}">#}
                     {#id: {{ item.product.id }}#}
-                <li>{{ item.product.manufacturer ~ ' ' ~ item.product.model }}
-                    {{ item.product.price }} * {{ item.quantity }} piece(s) = {{ item.product.price * item.quantity }}
-                    <button type="submit">Remove</button>
-                </li>
-                </form>
-            {% endfor %}
-            <b>Total: </b> {{ total }}<br/>
-            <form action="{{ path('empty_cart') }}">
-                <button type="submit">Empty Cart</button>
+
+                    {#<li>{{ item.product.manufacturer ~ ' ' ~ item.product.model }}#}
+                    <li>{{ item.product.category ~ ' ' ~ item.product.model }}
+
+                        {{ item.product.price }} * {{ item.quantity }} piece(s)
+                        = {{ item.product.price * item.quantity }}
+                        {#<button type="submit">Remove</button>#}
+                        <a href="{{ path('remove_from_cart',{'product': item.product.id}) }}">Remove</a>
+                    </li>
+                    {#</form>#}
+                {% endfor %}
+                <b>Total: </b> {{ total }}<br/>
+                {#<form action="{{ path('empty_cart') }}">#}
+                {#<button type="submit">Empty Cart</button>#}
+                {% include 'cart/order_form.html.twig' %}
+
             </form>
+            <a href="{{ path('empty_cart') }}">Empty Cart</a>
         </ul>
         <a href="{{ path('category') }}">back to Categories</a>
     </div>

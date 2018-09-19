@@ -1,6 +1,8 @@
 <?php
 namespace App\Controller;
+use App\Entity\Orders;
 use App\Entity\Product;
+use App\Form\OrderType;
 use App\Service\CartManager;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\Routing\Annotation\Route;
@@ -8,7 +10,6 @@ use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\ParamConverter;
 use App\Repository\ProductRepository;
-
 
 
 class CartController extends Controller
@@ -19,7 +20,9 @@ class CartController extends Controller
     public function index()
     {
         $cm = $this->get(CartManager::class);
-        return $this->render('cart/index.html.twig', ['cart' => $cm->getCart()]);
+        $order = new Orders();
+        $orderForm = $this->createForm(OrderType::class, $order);
+        return $this->render('cart/index.html.twig', ['cart' => $cm->getCart(), 'orderForm' => $orderForm->createView()]);
     }
 
     /**

@@ -6,7 +6,7 @@
         .example-wrapper code { background: #F5F5F5; padding: 2px 6px; }
     </style>
     <div class="example-wrapper">
-        <h1> {{ product.manufacturer }}✅</h1>
+        <h1> {{ '(' ~ product.manufacturer ~ ') Category/Manufacturer: ' ~ product.category }}✅</h1>
         <form action="{{ path('add_to_cart',{'product': product.id}) }}">
         {#<b>Model: </b>{{ product.model }}#}
         {#<b>Price: </b>{{ product.price }}#}
