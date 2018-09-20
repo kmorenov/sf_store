@@ -3,6 +3,7 @@
 namespace App\Controller;
 
 use App\Entity\Orders;
+use App\Service\CartManager;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpKernel\Tests\Controller;
 use Symfony\Component\Routing\Annotation\Route;
@@ -12,16 +13,26 @@ use Symfony\Component\Form\FormFactoryInterface;
 use App\Form\OrderType;
 use Doctrine\ORM\EntityManagerInterface;
 
+use Symfony\Component\HttpFoundation\Session\SessionInterface;
+
 class OrderController extends AbstractController
 {
     private $formFactory;
     private $entityManager;
+    private $cartManager;
+//    private $session;
 
-    public function __construct(FormFactoryInterface $formFactory,
-    EntityManagerInterface $entityManager)
+    public function __construct(
+        FormFactoryInterface $formFactory,
+        EntityManagerInterface $entityManager,
+        CartManager $cartManager
+//        SessionInterface $session
+    )
     {
         $this->formFactory = $formFactory;
         $this->entityManager = $entityManager;
+        $this->cartManager = $cartManager;
+//        $this->session = $session;
     }
 
     /**
@@ -33,18 +44,26 @@ class OrderController extends AbstractController
         $orderForm = $this->formFactory->create(OrderType::class, $order);
         $orderForm->handleRequest($request);
 
-        dump($_POST);
         if ($orderForm->isSubmitted() && $orderForm->isValid()) {
             $order = $orderForm->getData();
 
-            $this->entityManager->persist($order);
+            if ($order instanceof Orders) {
+                $this->entityManager->persist($order);
+                $this->entityManager->flush();
+                $this->cartManager->emptyCart();
 
-            $this->entityManager->flush();
+                $type = 'success';
+                $message = 'Your order has been submitted.';
+            }
+            else {
+                $type = 'error';
+                $message = 'Your order could NOT be submitted.';
+            }
 
-            return $order;
+            $this->addFlash($type, $message);
+            return $this->redirectToRoute('cart');
         }
 
-        return 'Something went WRONG';
     }
 
 }

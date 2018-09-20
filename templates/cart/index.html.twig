@@ -19,32 +19,32 @@
 
     <div class="example-wrapper">
 
+        {% for label, messages in app.flashes %}
+            {% for message in messages %}
+                <div class="btn btn-warning flash-{{ label }}">
+                    {{ message }}
+                </div>
+            {% endfor %}
+        {% endfor %}
+
         Cart:
         <ul>
-            <form action="{{ path('order') }}">
                 {% set total = 0 %}
                 {% for item in cart %}
                     {% set total = total + item.product.price * item.quantity %}
-                    {#<form action="{{ path('remove_from_cart',{'product': item.product.id}) }}">#}
-                    {#id: {{ item.product.id }}#}
 
-                    {#<li>{{ item.product.manufacturer ~ ' ' ~ item.product.model }}#}
                     <li>{{ item.product.category ~ ' ' ~ item.product.model }}
 
                         {{ item.product.price }} * {{ item.quantity }} piece(s)
                         = {{ item.product.price * item.quantity }}
-                        {#<button type="submit">Remove</button>#}
                         <a href="{{ path('remove_from_cart',{'product': item.product.id}) }}">Remove</a>
                     </li>
-                    {#</form>#}
                 {% endfor %}
                 <b>Total: </b> {{ total }}<br/>
-                {#<form action="{{ path('empty_cart') }}">#}
-                {#<button type="submit">Empty Cart</button>#}
-                {% include 'cart/order_form.html.twig' %}
-
-            </form>
-            <a href="{{ path('empty_cart') }}">Empty Cart</a>
+                {% if (total != 0) %}
+                    {% include 'cart/order_form.html.twig' %}
+                    <a href="{{ path('empty_cart') }}">Empty Cart</a>
+                {% endif %}
         </ul>
         <a href="{{ path('category') }}">back to Categories</a>
     </div>
