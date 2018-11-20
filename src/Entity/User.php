@@ -139,4 +139,10 @@ class User
 
         return $this;
     }
+
+    public function __toString()
+    {
+        // TODO: Implement __toString() method.
+        return $this->lastName ? $this->lastName : 'New';
+    }
 }

@@ -2,6 +2,7 @@
 # https://symfony.com/doc/current/best_practices/configuration.html#application-related-configuration
 parameters:
     locale: 'en'
+    uploads_directory: '%kernel.project_dir%/public/images/products'
 
 services:
     # default configuration for services in *this* file
@@ -28,4 +29,32 @@ services:
     # please note that last definitions always *replace* previous ones
 
     App\Service\CartManager:
+        public: true
+
+    admin.product:
+        class: App\Admin\ProductAdmin
+        arguments: [~, App\Entity\Product, ~]
+        tags:
+            - { name: sonata.admin, manager_type: orm, label: Product, group: Admin }
+        public: true
+
+    admin.category:
+        class: App\Admin\CategoryAdmin
+        arguments: [~, App\Entity\Category, ~]
+        tags:
+            - { name: sonata.admin, manager_type: orm, label: Category, group: Admin }
+        public: true
+
+    admin.product_image:
+        class: App\Admin\ProductImageAdmin
+        arguments: [~, App\Entity\ProductImage, ~]
+        tags:
+            - { name: sonata.admin, manager_type: orm, label: Product Image, group: Admin }
+        public: true
+
+    admin.orders:
+        class: App\Admin\OrderAdmin
+        arguments: [~, App\Entity\Orders, ~]
+        tags:
+            - { name: sonata.admin, manager_type: orm, label: Order, group: Admin }
         public: true

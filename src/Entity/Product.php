@@ -53,6 +53,12 @@ class Product
         $this->productImages = new ArrayCollection();
     }
 
+    public function __toString()
+    {
+        // TODO: Implement __toString() method.
+        return $this->model ? $this->model : 'New';
+    }
+
     public function getId()
     {
         return $this->id;

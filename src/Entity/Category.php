@@ -24,12 +24,12 @@ class Category
     private $name;
 
     /**
-     * @ORM\ManyToOne(targetEntity="App\Entity\Category")
+     * @ORM\ManyToOne(targetEntity="App\Entity\Category", inversedBy="children")
      */
     private $parent;
 
     /**
-     * @ORM\OneToMany(targetEntity="App\Entity\Category", mappedBy="category")
+     * @ORM\OneToMany(targetEntity="App\Entity\Category", mappedBy="parent")
      */
     private $children;
 
