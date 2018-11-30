@@ -58,6 +58,11 @@ class Orders
         $this->orderPosition = new ArrayCollection();
     }
 
+    public function __toString()
+    {
+        return $this->lastName ? $this->lastName : 'New';
+    }
+
     public function getId(): ?int
     {
         return $this->id;

@@ -4,6 +4,7 @@ namespace App\Controller;
 
 use App\Entity\Orders;
 use App\Service\CartManager;
+
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpKernel\Tests\Controller;
 use Symfony\Component\Routing\Annotation\Route;
@@ -65,5 +66,4 @@ class OrderController extends AbstractController
         }
 
     }
-
 }
