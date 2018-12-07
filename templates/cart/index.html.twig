@@ -33,19 +33,36 @@
                 {% for item in cart %}
                     {% set total = total + item.product.price * item.quantity %}
 
-                    <li>{{ item.product.category ~ ' ' ~ item.product.model }}
+                    <li class="cart_position">{{ item.product.category ~ ' ' ~ item.product.model }}
 
                         {{ item.product.price }} * {{ item.quantity }} piece(s)
                         = {{ item.product.price * item.quantity }}
+                        <button type="button" onclick="removeFromCart({{ item.product.id }}, this);">remove</button>
                         <a href="{{ path('remove_from_cart',{'product': item.product.id}) }}">Remove</a>
                     </li>
                 {% endfor %}
-                <b>Total: </b> {{ total }}<br/>
+                <b>Total: </b><span id="cart_total"> {{ total }}</span> <br/>
                 {% if (total != 0) %}
                     {% include 'cart/order_form.html.twig' %}
-                    <a href="{{ path('empty_cart') }}">Empty Cart</a>
+
                 {% endif %}
         </ul>
         <a href="{{ path('category') }}">back to Categories</a>
     </div>
+
+    <script>
+        function removeFromCart(productId, el) {
+            $.ajax({
+                url: "/remove-from-cart/" + productId,
+            }).done(function(data) {
+                console.log(data);
+                $( el ).parent().remove();
+                $('#cart_total').text(data.total);
+
+                if (data.total == 0) {
+                    $('#order_form').remove();
+                }
+            });
+        }
+    </script>
 {% endblock %}

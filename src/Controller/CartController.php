@@ -4,6 +4,7 @@ use App\Entity\Orders;
 use App\Entity\Product;
 use App\Form\OrderType;
 use App\Service\CartManager;
+use Symfony\Component\HttpFoundation\JsonResponse;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\Routing\Annotation\Route;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
@@ -28,10 +29,20 @@ class CartController extends Controller
     /**
      * @Route("/remove-from-cart/{product}", name="remove_from_cart")
     */
-    public function remove(Product $product)
+    public function remove(Product $product, Request $request)
     {
+        $arr = json_decode($request->getContent(), true);
+
         $cm = $this->get(CartManager::class);
         $cm->remove($product);
+
+        if ($request->isXmlHttpRequest()) {
+            return new JsonResponse([
+                'error' => false,
+                'total' => $cm->getTotal()
+            ]);
+        }
+
         return $this->redirectToRoute('cart');
     }
 

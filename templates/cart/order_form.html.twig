@@ -1,13 +1,18 @@
 {% form_theme orderForm 'bootstrap_4_layout.html.twig' %}
-{{ form_start(orderForm, {'action' : path('order'), 'method' : 'POST'} ) }}
-{#{{ form_widget(orderForm) }}#}
-{{ form_row(orderForm.firstName) }}
-{{ form_row(orderForm.lastName) }}
-{{ form_row(orderForm.price) }}
-{{ form_row(orderForm.email) }}
-{{ form_row(orderForm.phone) }}
-{{ form_row(orderForm.createdAt) }}
+<div id="order_form">
+    {{ form_start(orderForm, {'action' : path('order'), 'method' : 'POST'} ) }}
+    {#{{ form_widget(orderForm) }}#}
+    {{ form_row(orderForm.firstName) }}
+    {{ form_row(orderForm.lastName) }}
+    {{ form_row(orderForm.price) }}
+    {{ form_row(orderForm.email) }}
+    {{ form_row(orderForm.phone) }}
+    {{ form_row(orderForm.createdAt) }}
 
-<button type="submit" class="button cart_button_checkout">Order</button>
+    <button type="submit" class="button cart_button_checkout">Order</button>
 
-{{ form_end(orderForm) }}
+    {{ form_end(orderForm) }}
+
+    <a href="{{ path('empty_cart') }}">Empty Cart</a>
+
+</div>

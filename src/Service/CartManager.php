@@ -74,4 +74,16 @@ class CartManager
     {
         $this->session->remove(self::SESSION_CART_ID);
     }
+
+
+    public function getTotal()
+    {
+        $sum = 0;
+
+        foreach ($this->getCart() as $item) {
+            $sum += $item['product']->getPrice() * $item['quantity'];
+        }
+
+        return $sum;
+    }
 }
