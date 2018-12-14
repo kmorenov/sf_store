@@ -3,28 +3,41 @@
 {% block body %}
     <h1>Shopping Cart</h1>
     <form action="{{ path('order') }}">
-        {% set i = 0 %}
-        {% for p in cart %}
+        {% for product in cart %}
+            {{ _self.input(product) }}
             {#<form action="{{ path('cart') }}">#}
-            {% dump(p) %}
-                <input type="text" name="cart" value="{{ p.id }}" size="2">
+                {#<input type="text" name="cart" value="{{ p.id }}" size="2">#}
                 {#<input type="text" name="cart[productid]" value="{{ p.id }}" size="2">#}
-                <b>Model: </b> {{ p.model }}
-                <b>Price: </b> {{ p.price }}
-            {% dump(p.quantity) %}
-                <label><b>Quantity: </b><input type="number" id="qty" name="[quantity]"  {# {{ p.id }}]" p.id#}
-                                               {% if p.quantity is defined %} {# and p.quantity is not empty #}
-                                                   value="{{ p.quantity }}"
-                                               {% else %}
-                                                   value="1"
-                                               {% endif %}
-                                               min="1" max="5"></label>
+                {#<b>Model: </b> {{ p.model }}#}
+                {#<b>Price: </b> {{ p.price }}#}
+                {#<label><b>Quantity: </b><input type="number" id="qty" name="[quantity]"  #}{# {{ p.id }}]" p.id#}
+                                               {#{% if p.quantity is defined %} #}{# and p.quantity is not empty #}
+                                                   {#value="{{ p.quantity }}"#}
+                                               {#{% else %}#}
+                                                   {#value="1"#}
+                                               {#{% endif %}#}
+                                               {#min="1" max="5"></label>#}
                 <b>Total: </b><br/>
                 {#<button type="submit">Update</button><br/>#}
             {#</form>#}
-            {% set i = i+1 %}
         {% endfor %}
         <br/><button type="submit">Proceed to Checkout</button>
     </form>
     <a href="{{ path('category') }}">back to Categories</a>
+
+
+
+    {% macro input(p) %}
+        <input type="text" name="cart" value="{{ p.id }}" size="2">
+        {#<input type="text" name="cart[productid]" value="{{ p.id }}" size="2">#}
+        <b>Model: </b> {{ p.model }}
+        <b>Price: </b> {{ p.price }}
+        <label><b>Quantity: </b><input type="number" id="qty" name="[quantity]"  {# {{ p.id }}]" p.id#}
+                    {% if p.quantity is defined %} {# and p.quantity is not empty #}
+                        value="{{ p.quantity }}"
+                    {% else %}
+                        value="1"
+                    {% endif %}
+                                       min="1" max="5"></label>
+    {% endmacro %}
 {% endblock %}

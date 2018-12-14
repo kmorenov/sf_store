@@ -25,8 +25,10 @@ services:
         resource: '../src/Controller'
         tags: ['controller.service_arguments']
 
-    # add more service definitions when explicit configuration is needed
-    # please note that last definitions always *replace* previous ones
+
+    App\EventListener\OrderListener:
+        tags:
+            - { name: kernel.event_listener, event: order.persist, method: onOrderPersist, priority: 20}
 
     App\Service\CartManager:
         public: true

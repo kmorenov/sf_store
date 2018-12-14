@@ -3,9 +3,12 @@
 namespace App\Controller;
 
 use App\Entity\Orders;
+use App\Event\OrderEvent;
 use App\Service\CartManager;
 
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
+use Symfony\Component\EventDispatcher\EventDispatcher;
+use Symfony\Component\EventDispatcher\EventDispatcherInterface;
 use Symfony\Component\HttpKernel\Tests\Controller;
 use Symfony\Component\Routing\Annotation\Route;
 
@@ -39,7 +42,7 @@ class OrderController extends AbstractController
     /**
      * @Route("/order", name="order")
      */
-    public function index(Request $request)
+    public function index(Request $request, EventDispatcherInterface $dispatcher)
     {
         $order = new Orders();
         $orderForm = $this->formFactory->create(OrderType::class, $order);
@@ -52,6 +55,11 @@ class OrderController extends AbstractController
                 $this->entityManager->persist($order);
                 $this->entityManager->flush();
                 $this->cartManager->emptyCart();
+
+                $orderEvent = new OrderEvent();
+                $orderEvent->setOrder($order);
+
+                $dispatcher->dispatch('order.persist', $orderEvent);
 
                 $type = 'success';
                 $message = 'Your order has been submitted.';
