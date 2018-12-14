@@ -1,0 +1,22 @@
+{% form_theme form 'bootstrap_4_layout.html.twig' %}
+
+{{ form_start(form) }}
+
+    {{ form_row(form.model) }}
+    {{ form_row(form.manufacturer) }}
+    {{ form_row(form.price) }}
+    {{ form_row(form.category) }}
+
+    <h3>Product Image</h3>
+    {{ dump(form.productImages) }}
+    <ul >
+        {% for productImage in form.productImages %}
+            <li>{{ form_row(productImage.filepath, {
+                    'label_attr': {'class': 'btn btn-info', 'style': 'cursor: pointer;'}, 'attr': {'style': 'display: none;'}}
+                ) }}</li>
+        {% endfor %}
+    </ul>
+
+    <button type="submit" class="btn btn-primary btn-block">{{ button_label|default('Добавить продукт') }}</button>
+
+{{ form_end(form) }}

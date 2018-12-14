@@ -8,6 +8,7 @@ use Doctrine\ORM\Mapping as ORM;
 
 /**
  * @ORM\Entity(repositoryClass="App\Repository\OrderRepository")
+ * @ORM\HasLifecycleCallbacks()
  */
 class Orders
 {
@@ -28,10 +29,10 @@ class Orders
      */
     private $lastName;
 
-    /**
-     * @ORM\Column(type="integer")
-     */
-    private $price;
+//    /**
+//     * @ORM\Column(type="integer")
+//     */
+//    private $price;
 
     /**
      * @ORM\Column(type="string", length=20, nullable=true)
@@ -43,15 +44,19 @@ class Orders
      */
     private $email;
 
-    /**
-     * @ORM\OneToMany(targetEntity="App\Entity\OrderPosition", mappedBy="orders")
-     */
-    private $orderPosition;
+
 
     /**
      * @ORM\Column(type="datetime")
      */
     private $createdAt;
+
+    /**
+     * @ORM\OneToMany(targetEntity="App\Entity\OrderPosition", mappedBy="orders")
+     */
+    private $orderPosition;
+
+
 
     public function __construct()
     {
@@ -128,6 +133,24 @@ class Orders
         return $this;
     }
 
+
+
+    public function getCreatedAt(): ?\DateTimeInterface
+    {
+        return $this->createdAt;
+    }
+
+    /**
+     * @ORM\PrePersist()
+     */
+
+    public function setCreatedAt() //\DateTimeInterface $createdAt): self
+    {
+        $this->createdAt = new \DateTime();  //$createdAt;
+
+        return $this;
+    }
+
     /**
      * @return Collection|OrderPosition[]
      */
@@ -155,18 +178,6 @@ class Orders
                 $orderPosition->setOrders(null);
             }
         }
-
-        return $this;
-    }
-
-    public function getCreatedAt(): ?\DateTimeInterface
-    {
-        return $this->createdAt;
-    }
-
-    public function setCreatedAt(\DateTimeInterface $createdAt): self
-    {
-        $this->createdAt = $createdAt;
 
         return $this;
     }

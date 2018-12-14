@@ -1,0 +1,44 @@
+{% extends 'base/admin.html.twig' %}
+
+{% block content %}
+    <div class="content-wrapper">
+    <div class="container-fluid">
+        <div class="card mb-3">
+            <div class="card-header">Список продуктов</div>
+            <div class="row">
+                <div class="col-sm-4">
+                    <a href="{{ path('addProduct') }}" class="btn btn-success">Добавить продукт</a>
+                </div>
+                <div class="col-sm-4">
+                    <a href="{{ path('addProductImage') }}" class="btn btn-success">Добавить картинку</a>
+                </div>
+            </div>
+            <div class="card-body">
+                <div class="row">
+                    <div class="col-sm-4">
+                        <table class="table">
+                            <tr>
+                                <th>Производитель</th>
+                                <th>Модель</th>
+                                <th>Цена</th>
+                                <th>Категория</th>
+                            </tr>
+                            {% for product in products %}
+                                <tr>
+                                    <td>{{ product.manufacturer }}</td>
+                                    <td>{{ product.model }}</td>
+                                    <td>${{ product.price }}</td>
+                                    <td>{{ product.category }}</td>
+                                    <td><a href="{{ path('editProduct', {'product': product.id}) }}" class="btn btn-primary">Редактировать</a></td>
+                                    <td><a href="{{ path('deleteProduct', {'product': product.id}) }}" class="btn btn-danger">Удалить</a></td>
+                                </tr>
+                            {% endfor %}
+                        </table>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

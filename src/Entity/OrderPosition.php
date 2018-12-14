@@ -2,6 +2,7 @@
 
 namespace App\Entity;
 
+use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\ORM\Mapping as ORM;
 
 /**
@@ -32,10 +33,31 @@ class OrderPosition
     private $productId;
 
     /**
-     * @ORM\ManyToOne(targetEntity="Orders", inversedBy="orderPosition")
+     * @ORM\ManyToOne(targetEntity="App\Entity\Orders", inversedBy="orderPosition")
      * @ORM\JoinColumn(nullable=false)
      */
     private $orders;
+
+
+
+
+
+    public function __construct($price, $quantity, $productId, $orders)
+    {
+        $this->orders = new ArrayCollection();
+
+        $this->price = $price;
+        $this->quantity = $quantity;
+        $this->productId = $productId;
+        $this->orders = $orders;
+
+    }
+
+    public function __toString()
+    {
+        // TODO: Implement __toString() method.
+        return $this->getId() ? $this->getId() : '';
+    }
 
     public function getId(): ?int
     {
@@ -89,5 +111,7 @@ class OrderPosition
 
         return $this;
     }
+
+
 
 }
