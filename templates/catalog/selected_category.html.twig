@@ -1,0 +1,30 @@
+<ul class="cat_menu">
+    {% for secondLevel in categories %}
+        {% if secondLevel.parent %}
+            <li class="hassubs"><a
+                        href="{{ path('selected_category', {'id' : secondLevel.id}) }}">{{ secondLevel.name }}<i
+                            class="fas fa-chevron-right"></i></a>
+                <ul>
+                    {% for product in secondLevel.products %}
+                        {% if product.category == secondLevel.name %}
+                            <li>
+                                <a href="{{ path('article', {'productid' : product.id}) }}">{{ product.model ~ ' ' ~ product.price }}</a>
+                            </li>
+                        {% endif %}
+                    {% endfor %}
+                </ul>
+            </li>
+        {% endif %}
+    {% endfor %}
+</ul>
+
+{#{% for secondLevel in categories %}#}
+    {#{{ 'f: ' ~ secondLevel }}#}
+    {#{{ secondLevel.name }}<br>#}
+    {#{% for thirdLevel in categories %}#}
+        {#{{ 's: ' ~ secondLevel.id ~ ' t: ' ~ thirdLevel.parent.id }}<br>#}
+        {#{% if thirdLevel.parent.id == secondLevel.id %}#}
+            {#{{ thirdLevel.parent.id }} {{ secondLevel.id }}<br>#}
+        {#{% endif %}#}
+    {#{% endfor %}#}
+{#{% endfor %}#}

@@ -1,0 +1,38 @@
+<ul class="cat_menu">
+    {% for firstLevel in categories %}
+        {% if not firstLevel.parent %}
+            <li class="hassubs">{{ firstLevel }}<i class="fas fa-chevron-right"></i>
+
+                <ul>
+                    {% for secondLevel in categories %}
+                        {% if secondLevel.parent and secondLevel.parent.id == firstLevel.id %}
+                            <li class="hassubs"><a href="{{ path('selected_category', {'id' : secondLevel.id}) }}">{{ secondLevel.name }}<i class="fas fa-chevron-right"></i></a>
+
+                                <ul>
+                                    {% for thirdLevel in categories %}
+                                        {% if thirdLevel.parent and thirdLevel.parent.parent and thirdLevel.parent.id == secondLevel.id
+                                            and thirdLevel.parent.parent.id == firstLevel.id %}
+                                            <li class="hassubs"><a
+                                                        href="{{ path('product', {'productid' : thirdLevel.id}) }}">{{ thirdLevel }}
+                                                    <i class="fas fa-chevron-right"></i></a>
+                                                <ul>
+                                                    {% for product in thirdLevel.products %}
+                                                        <li>
+                                                            <a href="{{ path('article', {'productid' : product.id}) }}">{{ product.model ~ ' ' ~ product.price }}</a>
+                                                        </li>
+                                                    {% endfor %}
+                                                </ul>
+                                            </li>
+                                        {% endif %}
+                                    {% endfor %}
+                                </ul>
+
+                            </li>
+                        {% endif %}
+                    {% endfor %}
+                </ul>
+
+            </li>
+        {% endif %}
+    {% endfor %}
+</ul>
