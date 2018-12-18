@@ -33,11 +33,11 @@ class DefaultController extends AbstractController
 
         switch ($role) {
             case 'ROLE_SUPER_ADMIN':
-                return $this->render('order/index.html.twig', compact('orders'));
+                return $this->redirectToRoute('admin_app_orderposition_list');
             // logic to determine if the user can EDIT
             // return true or false
             case 'ROLE_ADMIN':
-                return $this->redirectToRoute('category');  //true;
+                return $this->render('order/index.html.twig', compact('orders'));
             // logic to determine if the user can VIEW
             // return true or false
             case 'ROLE_USER':

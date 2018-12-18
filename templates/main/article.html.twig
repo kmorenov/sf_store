@@ -29,8 +29,6 @@
             <img src= {{ '/images/products/' ~ img.filepath }}>
         {% endfor %}
         <form action="{{ path('add_to_cart',{'product': product.id}) }}">
-            {#<b>Model: </b>{{ product.model }}#}
-            {#<b>Price: </b>{{ product.price }}#}
             <b>Model: </b><input type="text" name="model" value="{{ product.model }}" disabled="disabled">
             <b>Price: </b><input type="number" name="price" value="{{ product.price }}" disabled="true">
             <b>Quantity: </b><input type="number" name="quantity" value="1" min="1" max="5">
