@@ -11,7 +11,6 @@ use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\ParamConverter;
 use App\Repository\ProductRepository;
 
-
 class CartController extends Controller
 {
     /**
@@ -68,4 +67,5 @@ class CartController extends Controller
             'product' => $product,
         ]);
     }
+
 }

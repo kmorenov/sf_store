@@ -14,10 +14,10 @@ class OrderType extends AbstractType
         $builder
             ->add('firstName')
             ->add('lastName')
-            ->add('price')
+//            ->add('price')
             ->add('phone')
             ->add('email')
-            ->add('createdAt')
+//            ->add('createdAt')
         ;
     }
 

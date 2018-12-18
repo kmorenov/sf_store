@@ -33,29 +33,24 @@ class DefaultController extends AbstractController
 
         switch ($role) {
             case 'ROLE_SUPER_ADMIN':
-                dump('rsa');
                 return $this->render('order/index.html.twig', compact('orders'));
             // logic to determine if the user can EDIT
             // return true or false
             case 'ROLE_ADMIN':
-                dump('ra');
-                return $this->redirectToRoute('catalog', compact('products'));  //true;
+                return $this->redirectToRoute('category');  //true;
             // logic to determine if the user can VIEW
             // return true or false
             case 'ROLE_USER':
-                dump('ru');
                 return $this->redirectToRoute('cart');
             default:
-                dump('default');
                 return false;
         }
 
-        dump('ret false');
         return false;
 
 
 
-        $this->denyAccessUnlessGranted($role, $orders);
+//        $this->denyAccessUnlessGranted($role, $orders);
 
 //        return $this->redirectToRoute('category');
 

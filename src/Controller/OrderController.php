@@ -2,6 +2,7 @@
 
 namespace App\Controller;
 
+use App\Entity\OrderPosition;
 use App\Entity\Orders;
 use App\Service\CartManager;
 
@@ -16,24 +17,33 @@ use Doctrine\ORM\EntityManagerInterface;
 
 use Symfony\Component\HttpFoundation\Session\SessionInterface;
 
+use App\Form\OrderPositionType;
+
+use App\Repository\ProductRepository;
+
+
 class OrderController extends AbstractController
 {
     private $formFactory;
     private $entityManager;
     private $cartManager;
-//    private $session;
+    private $session;
+
+    const SESSION_CART_ID = 'cart';
 
     public function __construct(
         FormFactoryInterface $formFactory,
         EntityManagerInterface $entityManager,
-        CartManager $cartManager
-//        SessionInterface $session
+        CartManager $cartManager,
+        SessionInterface $session,
+        ProductRepository $productRepository
     )
     {
         $this->formFactory = $formFactory;
         $this->entityManager = $entityManager;
         $this->cartManager = $cartManager;
-//        $this->session = $session;
+        $this->session = $session;
+        $this->productRepository = $productRepository;
     }
 
     /**
@@ -45,18 +55,36 @@ class OrderController extends AbstractController
         $orderForm = $this->formFactory->create(OrderType::class, $order);
         $orderForm->handleRequest($request);
 
+
         if ($orderForm->isSubmitted() && $orderForm->isValid()) {
             $order = $orderForm->getData();
 
             if ($order instanceof Orders) {
+
                 $this->entityManager->persist($order);
                 $this->entityManager->flush();
+
+                $session = $this->get('session');
+                $cart = $session->get(self::SESSION_CART_ID);
+                dump($cart);
+                dump(key($cart));
+
+                foreach ($cart as $key => $value) {
+                    $orderPosition = new OrderPosition($this->productRepository->find($key)->getPrice(), $value, $key, $order);
+                    $orderPositionForm = $this->formFactory->create(OrderPositionType::class, $orderPosition);
+                    $orderPositionForm->handleRequest($request);
+                    $orderPosition = $orderPositionForm->getData();
+                    $this->entityManager->persist($orderPosition);
+
+                $this->entityManager->flush();
+                }
+
                 $this->cartManager->emptyCart();
+
 
                 $type = 'success';
                 $message = 'Your order has been submitted.';
-            }
-            else {
+            } else {
                 $type = 'error';
                 $message = 'Your order could NOT be submitted.';
             }

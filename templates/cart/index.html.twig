@@ -3,6 +3,9 @@
 {% block title %} CART {% endblock %}
 
 {% block body %}
+    {% block copyright %}
+        {{ parent() }}
+    {% endblock %}
     <style>
         .example-wrapper {
             margin: 1em auto;
@@ -29,23 +32,31 @@
 
         Cart:
         <ul>
-                {% set total = 0 %}
-                {% for item in cart %}
-                    {% set total = total + item.product.price * item.quantity %}
+            {% set total = 0 %}
+            {% for item in cart %}
+                {% set total = total + item.product.price * item.quantity %}
 
-                    <li>{{ item.product.category ~ ' ' ~ item.product.model }}
+                <li>{{ item.product.category ~ ' ' ~ item.product.model }}
 
-                        {{ item.product.price }} * {{ item.quantity }} piece(s)
-                        = {{ item.product.price * item.quantity }}
-                        <a href="{{ path('remove_from_cart',{'product': item.product.id}) }}">Remove</a>
-                    </li>
-                {% endfor %}
-                <b>Total: </b> {{ total }}<br/>
-                {% if (total != 0) %}
-                    {% include 'cart/order_form.html.twig' %}
-                    <a href="{{ path('empty_cart') }}">Empty Cart</a>
-                {% endif %}
+                    {{ item.product.price }} * {{ item.quantity }} piece(s)
+                    = {{ item.product.price * item.quantity }}
+                    <a href="{{ path('remove_from_cart',{'product': item.product.id}) }}">Remove</a>
+                </li>
+            {% endfor %}
+            <b>Total: </b> {{ total }}<br/>
+            {% block characteristics %}
+                {{ parent() }}
+            {% endblock %}
+            {% if (total != 0) %}
+                {% include 'cart/order_form.html.twig' %}
+                <a href="{{ path('empty_cart') }}">Empty Cart</a>
+            {% endif %}
         </ul>
         <a href="{{ path('category') }}">back to Categories</a>
     </div>
+
+    {% block footer %}
+        {{ parent() }}
+    {% endblock %}
+
 {% endblock %}

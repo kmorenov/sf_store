@@ -87,4 +87,13 @@ class CategoryController extends Controller
 
         return $this->redirectToRoute('category_index');
     }
+
+
+
+    public function menuCategory(CategoryRepository $categoryRepository)
+    {
+        $categories = $categoryRepository->findAll(); //findBy(['parent' => null ]);
+        return $this->render('category/partial/menu_category.html.twig', compact('categories'));
+//        return $this->render('catalog/shop.html.twig', compact('categories'));
+    }
 }

@@ -53,7 +53,7 @@
                         {% if app.request.requestUri == "/OneTech/home" %}
                             <span>OneTech</span>
                         {% else %}
-                            <a href="{{ path('home') }}">OneTech</a>
+                            {#<a href="{{ path('home') }}">OneTech</a>#}
                         {% endif %}
                         </div>
                     </div>
@@ -99,11 +99,13 @@
                             <div class="cart_container d-flex flex-row align-items-center justify-content-end">
                                 <div class="cart_icon">
                                     <img src={{ asset("images/cart.png") }} alt="">
-                                    <div class="cart_count"><span>10</span></div>
+                                    <div class="cart_count"><span>{{ cart_manager_service.count }}</span></div>
                                 </div>
                                 <div class="cart_content">
                                     <div class="cart_text"><a href="{{ path('cart') }}">Cart</a></div>
-                                    <div class="cart_price">$85</div>
+                                    <div class="cart_price">
+                                        {{ cart_manager_service.getTotal }}
+                                    </div>
                                 </div>
                             </div>
                         </div>
@@ -142,7 +144,7 @@
                                 {% if app.request.requestUri == "/OneTech/home" %}
                                     <span>Home</i></span>
                                 {% else %}
-                                    <a href="{{ path('home') }}">Home<i class="fas fa-chevron-down"></i></a>
+                                    {#<a href="{{ path('home') }}">Home<i class="fas fa-chevron-down"></i></a>#}
                                 {% endif %}
                                 </li>
                                 <li class="hassubs">
@@ -180,15 +182,15 @@
                                 <li class="hassubs">
                                     <a href="#">Pages<i class="fas fa-chevron-down"></i></a>
                                     <ul>
-                                        <li><a href="{{ path('shop') }}">Shop<i class="fas fa-chevron-down"></i></a></li>
-                                        <li><a href="{{ path('blog') }}">Blog<i class="fas fa-chevron-down"></i></a></li>
-                                        <li><a href="{{ path('blogSingle') }}">Blog Post<i class="fas fa-chevron-down"></i></a></li>
-                                        <li><a href="{{ path('cart') }}">Cart<i class="fas fa-chevron-down"></i></a></li>
-                                        <li><a href="{{ path('contact') }}">Contact<i class="fas fa-chevron-down"></i></a></li>
+                                        {#<li><a href="{{ path('shop') }}">Shop<i class="fas fa-chevron-down"></i></a></li>#}
+                                        {#<li><a href="{{ path('blog') }}">Blog<i class="fas fa-chevron-down"></i></a></li>#}
+                                        {#<li><a href="{{ path('blogSingle') }}">Blog Post<i class="fas fa-chevron-down"></i></a></li>#}
+                                        {#<li><a href="{{ path('cart') }}">Cart<i class="fas fa-chevron-down"></i></a></li>#}
+                                        {#<li><a href="{{ path('contact') }}">Contact<i class="fas fa-chevron-down"></i></a></li>#}
                                     </ul>
                                 </li>
-                                <li><a href="{{ path('blog') }}">Blog<i class="fas fa-chevron-down"></i></a></li>
-                                <li><a href="{{ path('contact') }}">Contact<i class="fas fa-chevron-down"></i></a></li>
+                                {#<li><a href="{{ path('blog') }}">Blog<i class="fas fa-chevron-down"></i></a></li>#}
+                                {#<li><a href="{{ path('contact') }}">Contact<i class="fas fa-chevron-down"></i></a></li>#}
                             </ul>
                         </div>
 

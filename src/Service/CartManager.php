@@ -5,6 +5,7 @@
  * Date: 28/08/18
  * Time: 1:38 AM
  */
+
 namespace App\Service;
 
 use Symfony\Component\HttpFoundation\Session\SessionInterface;
@@ -31,7 +32,7 @@ class CartManager
             $cart[$product->getId()] += $quantity;
 //            $this->session->set(self::SESSION_CART_ID, $cart);
 //            return;
-        }else {
+        } else {
             $cart[$product->getId()] = $quantity;
         }
         $this->session->set(self::SESSION_CART_ID, $cart);
@@ -43,12 +44,12 @@ class CartManager
                 $_SESSION[self::SESSION_CART_ID][$product->getId()] = $quantity;*/
     }
 
-    public function getCart() :array
+    public function getCart(): array
     {
         $res = [];
 
 //        if (!isset($_SESSION[self::SESSION_CART_ID]) || empty($_SESSION[self::SESSION_CART_ID])) {
-        if (!$this->session->has(self::SESSION_CART_ID) || empty($this->session->has(self::SESSION_CART_ID))){
+        if (!$this->session->has(self::SESSION_CART_ID) || empty($this->session->has(self::SESSION_CART_ID))) {
             return [];
         }
 //        foreach ($_SESSION[self::SESSION_CART_ID] as $productId => $quantity) {
@@ -64,7 +65,7 @@ class CartManager
     public function remove(Product $product)
     {
         $cart = $this->session->get(self::SESSION_CART_ID);
-        if (array_key_exists($product->getId(), $cart)){ //$_SESSION['cart'])) {
+        if (array_key_exists($product->getId(), $cart)) { //$_SESSION['cart'])) {
             unset($cart[$product->getId()]);
             $this->session->set(self::SESSION_CART_ID, $cart);
         }
@@ -73,5 +74,31 @@ class CartManager
     public function emptyCart()
     {
         $this->session->remove(self::SESSION_CART_ID);
+    }
+
+    public function getTotal()
+    {
+        $total = 0;
+        $cart =  $this->getCart();
+        dump($cart);
+        if ($cart) {
+            foreach ($cart as $value) {
+                $total += $value['product']->getPrice() * $value['quantity'];
+            }
+        }
+        return $total;
+    }
+
+    public function count()
+    {
+        $count = 0;
+        $cart = $this->getCart();
+        dump($cart);
+        if ($cart) {
+            foreach ($cart as $value) {
+                $count += $value['quantity'];
+            }
+        }
+        return $count;
     }
 }

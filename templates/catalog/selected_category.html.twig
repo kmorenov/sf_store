@@ -9,6 +9,9 @@
                         {% if product.category == secondLevel.name %}
                             <li>
                                 <a href="{{ path('article', {'productid' : product.id}) }}">{{ product.model ~ ' ' ~ product.price }}</a>
+                                {% for img in product.productImages %}
+                                    <img src= {{ '/images/products/' ~ img.filepath }}>
+                                {% endfor %}
                             </li>
                         {% endif %}
                     {% endfor %}

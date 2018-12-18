@@ -23,7 +23,7 @@ class OrderAdmin extends AbstractAdmin
     {
         $formMapper->add('firstName', TextType::class)
             ->add('lastName', TextType::class)
-            ->add('price', IntegerType::class)
+//            ->add('price', IntegerType::class)
             ->add('phone', TextType::class)
             ->add('email', EmailType::class)
             ->add('createdAt', DateTimeType::class);
@@ -33,7 +33,7 @@ class OrderAdmin extends AbstractAdmin
     {
         $datagridMapper->add('firstName')
             ->add('lastName')
-            ->add('price')
+//            ->add('price')
             ->add('phone')
             ->add('email')
             ->add('createdAt');
@@ -44,7 +44,7 @@ class OrderAdmin extends AbstractAdmin
         $listMapper->addIdentifier('id')
             ->add('firstName')
             ->add('lastName')
-            ->add('price')
+//            ->add('price')
             ->add('phone')
             ->add('email')
             ->add('createdAt');

@@ -3,10 +3,13 @@
 {#{{ form_widget(orderForm) }}#}
 {{ form_row(orderForm.firstName) }}
 {{ form_row(orderForm.lastName) }}
-{{ form_row(orderForm.price) }}
 {{ form_row(orderForm.email) }}
 {{ form_row(orderForm.phone) }}
-{{ form_row(orderForm.createdAt) }}
+
+{#{% if orderForm.createdAt is not empty  %}#}
+  {#{{ form_row(orderForm.createdAt) }}#}
+{#{% endif %}#}
+  {#{{ orderForm.createdAt ? orderForm.createdAt|date('Y-m-d H:i:s') : '' }}#}
 
 <button type="submit" class="button cart_button_checkout">Order</button>
 

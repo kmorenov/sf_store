@@ -56,7 +56,7 @@ class OrderPosition
     public function __toString()
     {
         // TODO: Implement __toString() method.
-        return $this->getId() ? $this->getId() : '';
+        return $this->getId() ? 'Order Id: ' . $this->getId() : '';
     }
 
     public function getId(): ?int

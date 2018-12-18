@@ -20,6 +20,7 @@ use Symfony\Component\HttpFoundation\Request;
 
 use Symfony\Component\HttpFoundation\Session\Session;
 
+use App\Repository\CategoryRepository;
 
 class CatalogController extends Controller
 {
@@ -29,9 +30,10 @@ class CatalogController extends Controller
      */
     public function cat()
     {
-        $categories = $this->getDoctrine()->getRepository(Category::class)->findAll();
-        return $this->render('catalog/shop.html.twig', compact('categories'));
 
+        $categories = $this->getDoctrine()->getRepository(Category::class)->findAll();
+        return $this->render('base.html.twig',  [compact('categories'), 'cartic' => 5]);
+//        return $this->render('catalog/shop.html.twig', compact('categories'));
     }
 
     /**
@@ -151,4 +153,12 @@ class CatalogController extends Controller
         return $this->cart = $cart;
     }
 
+    /**
+     * @Route("/selected_category/{id}", name="selected_category")
+     */
+    public function getSelectedCategory(CategoryRepository $categoryRepository, $id)
+    {
+        $categories = $categoryRepository->findBy(['parent' => $id]);
+        return $this->render('catalog/selected_category.html.twig', ['categories' => $categories, 'id' => $id]);
+    }
 }
