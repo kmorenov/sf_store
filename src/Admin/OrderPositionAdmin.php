@@ -15,6 +15,7 @@ final class OrderPositionAdmin extends AbstractAdmin
     {
         $datagridMapper
 			->add('id')
+            ->add('orders')
 			->add('price')
 			->add('quantity')
 			->add('productId')
@@ -25,6 +26,7 @@ final class OrderPositionAdmin extends AbstractAdmin
     {
         $listMapper
 			->add('id')
+            ->add('orders')
 			->add('price')
 			->add('quantity')
 			->add('productId')
@@ -41,6 +43,7 @@ final class OrderPositionAdmin extends AbstractAdmin
     {
         $formMapper
 			->add('id')
+            ->add('orders')
 			->add('price')
 			->add('quantity')
 			->add('productId')
@@ -51,6 +54,7 @@ final class OrderPositionAdmin extends AbstractAdmin
     {
         $showMapper
 			->add('id')
+            ->add('orders')
 			->add('price')
 			->add('quantity')
 			->add('productId')

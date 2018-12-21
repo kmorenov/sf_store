@@ -5,6 +5,7 @@ namespace App\Entity;
 use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\Common\Collections\Collection;
 use Doctrine\ORM\Mapping as ORM;
+use phpDocumentor\Reflection\Types\Null_;
 
 /**
  * @ORM\Entity(repositoryClass="App\Repository\OrderRepository")
@@ -45,7 +46,6 @@ class Orders
     private $email;
 
 
-
     /**
      * @ORM\Column(type="datetime")
      */
@@ -57,7 +57,6 @@ class Orders
     private $orderPosition;
 
 
-
     public function __construct()
     {
         $this->orderPosition = new ArrayCollection();
@@ -65,7 +64,7 @@ class Orders
 
     public function __toString()
     {
-        return $this->lastName ? $this->lastName : 'New';
+        return $this->id ? 'Order ID: ' . $this->id : 'New';
     }
 
     public function getId(): ?int
@@ -134,7 +133,6 @@ class Orders
     }
 
 
-
     public function getCreatedAt(): ?\DateTimeInterface
     {
         return $this->createdAt;
@@ -144,7 +142,7 @@ class Orders
      * @ORM\PrePersist()
      */
 
-    public function setCreatedAt() //\DateTimeInterface $createdAt): self
+    public function setCreatedAt(): self //\DateTimeInterface $createdAt)
     {
         $this->createdAt = new \DateTime();  //$createdAt;
 

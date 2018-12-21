@@ -21,7 +21,8 @@ class OrderAdmin extends AbstractAdmin
 {
     protected function configureFormFields(FormMapper $formMapper)
     {
-        $formMapper->add('firstName', TextType::class)
+        $formMapper->add('id', IntegerType::class)
+            ->add('firstName', TextType::class)
             ->add('lastName', TextType::class)
 //            ->add('price', IntegerType::class)
             ->add('phone', TextType::class)
@@ -31,7 +32,8 @@ class OrderAdmin extends AbstractAdmin
 
     protected function configureDatagridFilters(DatagridMapper $datagridMapper)
     {
-        $datagridMapper->add('firstName')
+        $datagridMapper->add('id')
+            ->add('firstName')
             ->add('lastName')
 //            ->add('price')
             ->add('phone')
