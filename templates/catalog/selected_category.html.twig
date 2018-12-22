@@ -21,6 +21,7 @@
             width: 120px;
             /*background-color: #ccc;*/
         }
+
         .divCellImage {
             float: left; /*fix for  buggy browsers*/
             display: table-column;
@@ -65,30 +66,31 @@
                              </div>#}
 
                     <div class="divRow">
-                            <div class="divCell" align="center">{{ product.id }}</div>
+                        <div class="divCell" align="center">{{ product.id }}</div>
 
-                            <div class="divCellImage">
-                                {% for img in product.productImages %}
-                                    <img src= {{ '/images/products/' ~ img.filepath }}>
-                                {% else %}
-                                    {{ '--no uploaded image--' }}
-                                {% endfor %}
-                            </div>
+                        <div class="divCellImage">
+                            {% for img in product.productImages %}
+                                <img src= {{ '/images/products/' ~ img.filepath }}>
+                            {% else %}
+                                {{ '--no uploaded image--' }}
+                            {% endfor %}
+                        </div>
 
-                            <div class="divCell">{{ secondLevel.name }}</div>
+                        <div class="divCell">{{ secondLevel.name }}</div>
 
-                            <div class="divCell"><a
-                                        href="{{ path('article', {'productid' : product.id}) }}">{{ product.model }}</a>
-                            </div>
+                        <div class="divCell"><a
+                                    href="{{ path('article', {'productid' : product.id}) }}">{{ product.model }}</a>
+                        </div>
 
-                            <div class="divCell">{{ product.price }}</div>
+                        <div class="divCell">{{ product.price }}</div>
 
-                        <form action="{{ path('add_to_cart',{'product': product.id}) }}">
-                            <div class="divCell"><input type="number" name="quantity" value="1"
-                                                        min="1" max="5"></div>
-                            <button type="submit">Add</button>
-                        </form>
-                    </div>
+                        <div class="divCell">
+                            <form action="{{ path('add_to_cart',{'product': product.id}) }}">
+                                <input type="number" name="quantity" value="1"
+                                       min="1" max="5">
+                                <button type="submit">Add</button>
+                            </form>
+                        </div>
                     </div>
                 {% endif %}
 

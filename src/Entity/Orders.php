@@ -64,7 +64,7 @@ class Orders
 
     public function __toString()
     {
-        return $this->id ? 'Order ID: ' . $this->id : 'New';
+        return $this->id ? (string)$this->id : 'New';
     }
 
     public function getId(): ?int

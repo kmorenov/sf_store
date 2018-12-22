@@ -23,8 +23,12 @@
                 <td>{{ product.model }}</td>
                 <td>{{ product.manufacturer }}</td>
                 <td>{{ product.price }}</td>
-                <td>{{ product.dateAdded ? product.dateAdded|date('Y-m-d H:i:s') : '' }}</td>
-                <td><form action="/catalog/{{ product.id }}">
+                {#<td>{{ product.dateAdded ? product.dateAdded|date('Y-m-d H:i') : '' }}</td>#}
+                <td>
+                    {#<form action="/catalog/{{ product.id }}">#}
+                    <form action="{{ path('add_to_cart',{'product': product.id}) }}">
+                        <input type="number" name="quantity" value="1"
+                               min="1" max="5">
                         <button type="submit">Buy</button>
                     </form>
                 </td>
