@@ -29,77 +29,83 @@
             /*background-color: #ccc;*/
         }
     </style>
+    {% block back %}
+        {{ parent() }}
+    {% endblock %}
 
     <div>{{ categories[0].parent }}</div>
+    {#{% dump(paginator) %}#}
     <div class="divTable">
-    <div class="headRow">
-        <div class="divCell" align="center">Product ID</div>
-        <div class="divCellImage">Product Image</div>
-        <div class="divCell">Brand</div>
-        <div class="divCell">Model</div>
-        <div class="divCell">Price</div>
-        <div class="divCell">Quantity</div>
+        <div class="headRow">
+            <div class="divCell" align="center">Product ID</div>
+            <div class="divCellImage">Product Image</div>
+            <div class="divCell">Brand</div>
+            <div class="divCell">Model</div>
+            <div class="divCell">Price</div>
+            <div class="divCell">Quantity</div>
+        </div>
+        {% for secondLevel in categories %}
+            {% if secondLevel.name %}
+
+                {#<div>{{ secondLevel.parent }}</div>#}
+
+
+                {% for product in secondLevel.products %}
+
+                    {% if product.category == secondLevel.name %}
+
+                        {#  <div class="shop_content">
+                          {# <div class="product_item" style="position: absolute; left: 355px; top: 253px;">
+                                 <div class="product_border"></div>
+                                     <div class="product_image d-flex flex-column align-items-center justify-content-center"><img src="images/featured_6.png" alt=""></div>
+                                     <div class="product_content">
+                                         <div class="product_price">$225<span>$300</span></div>
+                                         <div class="product_name"><div><a href="#" tabindex="0">Samsung J330F</a></div></div>
+                                     </div>
+                                     <div class="product_fav"><i class="fas fa-heart"></i></div>
+                                     <ul class="product_marks">
+                                         <li class="product_mark product_discount">-25%</li>
+                                         <li class="product_mark product_new">new</li>
+                                     </ul>
+                                 </div>#}
+
+                        <div class="divRow">
+                            <div class="divCell" align="center">{{ product.id }}</div>
+
+                            <div class="divCellImage">
+                                {% for img in product.productImages %}
+                                    <img src= {{ '/images/products/' ~ img.filepath }}>
+                                {% else %}
+                                    {{ '--no uploaded image--' }}
+                                {% endfor %}
+                            </div>
+
+                            <div class="divCell">{{ secondLevel.name }}</div>
+
+                            <div class="divCell"><a
+                                        href="{{ path('article', {'productid' : product.id}) }}">{{ product.model }}</a>
+                            </div>
+
+                            <div class="divCell">{{ product.price }}</div>
+
+                            <div class="divCell">
+                                <form action="{{ path('add_to_cart',{'product': product.id}) }}">
+                                    <input type="number" name="quantity" value="1"
+                                           min="1" max="5">
+                                    <button type="submit">Add</button>
+                                </form>
+                            </div>
+                        </div>
+                    {% endif %}
+
+                {% endfor %}
+
+            {% endif %}
+
+        {% endfor %}
     </div>
-    {% for secondLevel in categories %}
-        {% if secondLevel.name %}
 
-            {#<div>{{ secondLevel.parent }}</div>#}
-
-
-            {% for product in secondLevel.products %}
-
-                {% if product.category == secondLevel.name %}
-
-                    {#  <div class="shop_content">
-                      {# <div class="product_item" style="position: absolute; left: 355px; top: 253px;">
-                             <div class="product_border"></div>
-                                 <div class="product_image d-flex flex-column align-items-center justify-content-center"><img src="images/featured_6.png" alt=""></div>
-                                 <div class="product_content">
-                                     <div class="product_price">$225<span>$300</span></div>
-                                     <div class="product_name"><div><a href="#" tabindex="0">Samsung J330F</a></div></div>
-                                 </div>
-                                 <div class="product_fav"><i class="fas fa-heart"></i></div>
-                                 <ul class="product_marks">
-                                     <li class="product_mark product_discount">-25%</li>
-                                     <li class="product_mark product_new">new</li>
-                                 </ul>
-                             </div>#}
-
-                    <div class="divRow">
-                        <div class="divCell" align="center">{{ product.id }}</div>
-
-                        <div class="divCellImage">
-                            {% for img in product.productImages %}
-                                <img src= {{ '/images/products/' ~ img.filepath }}>
-                            {% else %}
-                                {{ '--no uploaded image--' }}
-                            {% endfor %}
-                        </div>
-
-                        <div class="divCell">{{ secondLevel.name }}</div>
-
-                        <div class="divCell"><a
-                                    href="{{ path('article', {'productid' : product.id}) }}">{{ product.model }}</a>
-                        </div>
-
-                        <div class="divCell">{{ product.price }}</div>
-
-                        <div class="divCell">
-                            <form action="{{ path('add_to_cart',{'product': product.id}) }}">
-                                <input type="number" name="quantity" value="1"
-                                       min="1" max="5">
-                                <button type="submit">Add</button>
-                            </form>
-                        </div>
-                    </div>
-                {% endif %}
-
-            {% endfor %}
-
-        {% endif %}
-
-    {% endfor %}
-    </div>
-    {#</ul>#}
-
+    {% block footer %}
+        {{ parent() }}
+    {% endblock %}
 {% endblock %}

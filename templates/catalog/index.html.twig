@@ -3,6 +3,9 @@
 {% block title %}Product index{% endblock %}
 
 {% block body %}
+    {% block back %}
+        {{ parent() }}
+    {% endblock %}
 
     <table class="table">
         <thead>
@@ -11,8 +14,7 @@
                 <th>Model</th>
                 <th>Manufacturer</th>
                 <th>Price</th>
-                <th>Date_added</th>
-                {#<th>actions</th>#}
+                <th>Quantity</th>
             </tr>
         </thead>
         <tbody>
@@ -23,9 +25,7 @@
                 <td>{{ product.model }}</td>
                 <td>{{ product.manufacturer }}</td>
                 <td>{{ product.price }}</td>
-                {#<td>{{ product.dateAdded ? product.dateAdded|date('Y-m-d H:i') : '' }}</td>#}
                 <td>
-                    {#<form action="/catalog/{{ product.id }}">#}
                     <form action="{{ path('add_to_cart',{'product': product.id}) }}">
                         <input type="number" name="quantity" value="1"
                                min="1" max="5">
@@ -41,5 +41,4 @@
         </tbody>
     </table>
 
-    <a href="{{ path('category') }}">back to Categories</a>
 {% endblock %}

@@ -80,7 +80,6 @@ class CartManager
     {
         $total = 0;
         $cart =  $this->getCart();
-        dump($cart);
         if ($cart) {
             foreach ($cart as $value) {
                 $total += $value['product']->getPrice() * $value['quantity'];
@@ -93,7 +92,6 @@ class CartManager
     {
         $count = 0;
         $cart = $this->getCart();
-        dump($cart);
         if ($cart) {
             foreach ($cart as $value) {
                 $count += $value['quantity'];

@@ -32,8 +32,8 @@ class CatalogController extends Controller
     {
 
         $categories = $this->getDoctrine()->getRepository(Category::class)->findAll();
-        return $this->render('base.html.twig',  [compact('categories'), 'cartic' => 5]);
-//        return $this->render('catalog/shop.html.twig', compact('categories'));
+//        return $this->render('base.html.twig',  [compact('categories'), 'cartic' => 5]);
+        return $this->render('catalog/shop.html.twig', compact('categories'));
     }
 
     /**

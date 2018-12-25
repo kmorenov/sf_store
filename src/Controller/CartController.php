@@ -21,7 +21,10 @@ class CartController extends Controller
         $cm = $this->get(CartManager::class);
         $order = new Orders();
         $orderForm = $this->createForm(OrderType::class, $order);
-        return $this->render('cart/index.html.twig', ['cart' => $cm->getCart(), 'orderForm' => $orderForm->createView()]);
+        return $this->render('cart/index.html.twig', ['cart' => $cm->getCart(), 'orderForm' => $orderForm->createView()
+//            ,'compound' => null, 'id' => null, 'full_name' => null, 'disabled' => null, 'required' => null, 'attr' => null,
+//            'value' => null, 'form' => null
+        ]);
     }
 
     /**

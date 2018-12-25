@@ -3,7 +3,7 @@
 {% block title %} CART {% endblock %}
 
 {% block body %}
-    {% block copyright %}
+    {% block banner_2 %}
         {{ parent() }}
     {% endblock %}
     <style>
@@ -44,6 +44,7 @@
                 </li>
             {% endfor %}
             <b>Total: </b> {{ total }}<br/>
+            <a href="{{ path('category') }}">Continue Shopping</a>
             {% block characteristics %}
                 {{ parent() }}
             {% endblock %}
@@ -52,10 +53,13 @@
                 <a href="{{ path('empty_cart') }}">Empty Cart</a>
             {% endif %}
         </ul>
-        <a href="{{ path('category') }}">back to Categories</a>
     </div>
 
     {% block footer %}
+        {{ parent() }}
+    {% endblock %}
+
+    {% block copyright %}
         {{ parent() }}
     {% endblock %}
 

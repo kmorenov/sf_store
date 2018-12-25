@@ -1,16 +1,31 @@
 {% form_theme orderForm 'bootstrap_4_layout.html.twig' %}
-{{ form_start(orderForm, {'action' : path('order'), 'method' : 'POST'} ) }}
-{#{{ form_widget(orderForm) }}#}
-{{ form_row(orderForm.firstName) }}
-{{ form_row(orderForm.lastName) }}
-{{ form_row(orderForm.email) }}
-{{ form_row(orderForm.phone) }}
+{#{% extends 'form_div_layout.html.twig' %} #}{#with form_label as base_form_label %}#}
 
-{#{% if orderForm.createdAt is not empty  %}#}
-  {#{{ form_row(orderForm.createdAt) }}#}
-{#{% endif %}#}
-  {#{{ orderForm.createdAt ? orderForm.createdAt|date('Y-m-d H:i:s') : '' }}#}
+{% block body %}
+{#{% block form_label %}
+    {{ parent() }}
+    {% if required %}
+        <span> * </span>
+    {% endif %}
+    {% if compound is empty %}
+        {% set compound = null  %}
 
-<button type="submit" class="button cart_button_checkout">Order</button>
+    {% endif %}
+{% endblock form_label %}#}
 
-{{ form_end(orderForm) }}
+    {{ form_start(orderForm, {'action' : path('order'), 'method' : 'POST'} ) }}
+    {#{{ form_widget(orderForm) }}#}
+    {{ form_row(orderForm.firstName) }}
+    {{ form_row(orderForm.lastName) }}
+    {{ form_row(orderForm.email) }}
+    {{ form_row(orderForm.phone) }}
+
+    {#{% if orderForm.createdAt is not empty  %}#}
+    {#{{ form_row(orderForm.createdAt) }}#}
+    {#{% endif %}#}
+    {#{{ orderForm.createdAt ? orderForm.createdAt|date('Y-m-d H:i:s') : '' }}#}
+
+    <button type="submit" class="button cart_button_checkout">Order</button>
+
+    {{ form_end(orderForm) }}
+{% endblock %}

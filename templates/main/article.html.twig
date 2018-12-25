@@ -14,9 +14,9 @@
                 padding: 2px 6px;
             }
         </style>
-    {#    {% block header %}
+        {% block back %}
             {{ parent() }}
-        {% endblock %}#}
+        {% endblock %}
 
     {% block characteristics %}
         {{ parent() }}
@@ -34,7 +34,6 @@
             <b>Quantity: </b><input type="number" name="quantity" value="1" min="1" max="5">
             <button type="submit">Add</button>
         </form>
-        <a href="{{ path('category') }}">back to Categories</a>
     </div>
 
     {% block footer %}

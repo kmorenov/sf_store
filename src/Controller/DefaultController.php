@@ -21,11 +21,12 @@ class DefaultController extends AbstractController
     /**
      * @Route("/", name="default")
      */
-    public function viewOrder(ProductRepository $productRepository)
+    public function viewOrder() //ProductRepository $productRepository)
     {
 //         $this->denyAccessUnlessGranted('ORDER_VIEW', $orders);
-        $orders = $this->getDoctrine()->getRepository('App:Orders')->findAll();
-        $products = $productRepository->findAll();
+
+//        $orders = $this->getDoctrine()->getRepository('App:Orders')->findAll();
+//        $products = $productRepository->findAll();
 
         dump($role = $this->getUser()->getRoles()[0]);
 
@@ -41,12 +42,12 @@ class DefaultController extends AbstractController
             // logic to determine if the user can VIEW
             // return true or false
             case 'ROLE_USER':
-                return $this->redirectToRoute('cart');
+                return $this->redirectToRoute('category');
             default:
                 return false;
         }
 
-        return false;
+//        return false;
 
 
 

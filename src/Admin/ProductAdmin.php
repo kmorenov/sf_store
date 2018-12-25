@@ -18,11 +18,20 @@ class ProductAdmin extends AbstractAdmin
 {
     protected function configureFormFields(FormMapper $formMapper)
     {
-        $formMapper->add('category')
-            ->add('model')
-            ->add('manufacturer')
-            ->add('price')
-            ->add('date_added');
+        $formMapper
+            ->tab('Product')
+                ->with('Content', ['class' => 'col-md-9'])
+                    ->add('model')
+                    ->add('manufacturer')
+                    ->add('price')
+                    ->add('date_added')
+                ->end()
+            ->end()
+            ->tab('Data Option')
+                ->with('Meta Data', ['class' => 'col-md-3'])
+                    ->add('category')
+                ->end()
+            ->end();
     }
 
     protected function configureDatagridFilters(DatagridMapper $datagridMapper)
