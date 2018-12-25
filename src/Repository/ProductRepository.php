@@ -2,9 +2,11 @@
 
 namespace App\Repository;
 
+use App\Entity\Category;
 use App\Entity\Product;
 use Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepository;
 use Symfony\Bridge\Doctrine\RegistryInterface;
+use Symfony\Component\HttpFoundation\Request;
 
 /**
  * @method Product|null find($id, $lockMode = null, $lockVersion = null)
@@ -17,6 +19,37 @@ class ProductRepository extends ServiceEntityRepository
     public function __construct(RegistryInterface $registry)
     {
         parent::__construct($registry, Product::class);
+    }
+
+    public function getProductsQuery(Category $category, Request $request)
+    {
+        $qb = $this
+            ->createQueryBuilder('p')
+            ->join('p.category', 'cat')
+            ->join('cat.parent', 'parent')
+            ->andWhere('cat.name = :categoryName')
+            ->setParameter('categoryName', $category->getName())
+            ;
+
+        //minPrice
+        if ($minPrice = $request->get('minPrice')) {
+            $qb
+                ->andWhere('p.price >= :minPrice')
+                ->setParameter('minPrice', $minPrice)
+            ;
+        }
+
+        //maxPrice
+        if ($maxPrice = $request->get('maxPrice')) {
+            $qb
+                ->andWhere('p.price <= :maxPrice')
+                ->setParameter('maxPrice', $maxPrice)
+            ;
+        }
+
+
+
+        return $qb->getQuery();
     }
 
 //    /**
