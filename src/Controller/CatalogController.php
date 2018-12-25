@@ -8,6 +8,7 @@
 
 namespace App\Controller;
 
+use App\Repository\ProductRepository;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\ParamConverter;
 use Symfony\Component\Routing\Annotation\Route;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
@@ -37,15 +38,22 @@ class CatalogController extends Controller
     }
 
     /**
-     * @Route("/products/{productid}", name="product")
-//     *@ParamConverter("product", options={"mapping" : {"productid" : "id"}})
+     * @Route("/products/{category}", name="product")
+//     *@ParamConverter("product", options={"mapping" : {"category" : "id"}})
      */
-    public function product($productid)
+    public function product(Category $category, ProductRepository $productRepository, Request $request)
     {
-        $products = $this->getDoctrine()->getRepository(Product::class)
-            ->findBy(['category' => $productid]);
+        $query = $productRepository->getProductsQuery($category, $request);
 
-        return $this->render('catalog/index.html.twig', compact('products'));
+        $paginator  = $this->get('knp_paginator');
+        $pagination = $paginator->paginate(
+            $query, /* query NOT result */
+            $request->query->getInt('page', 1)/*page number*/,
+            2/*limit per page*/
+        );
+
+
+        return $this->render('catalog/index.html.twig', compact('pagination'));
     }
 
     /**

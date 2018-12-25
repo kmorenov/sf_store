@@ -10,21 +10,21 @@
     <table class="table">
         <thead>
             <tr>
-                <th>Id</th>
-                <th>Model</th>
+                <th>{{ knp_pagination_sortable(pagination, 'Id', 'p.id' )|raw }}</th>
+                <th>{{ knp_pagination_sortable(pagination, 'Model', 'p.model' )|raw }}</th>
                 <th>Manufacturer</th>
-                <th>Price</th>
+                <th>{{ knp_pagination_sortable(pagination, 'Price', 'p.price' )|raw }}</th>
                 <th>Quantity</th>
             </tr>
         </thead>
         <tbody>
 
-        {% for product in products %}
+        {% for product in pagination %}
             <tr>
                 <td>{{ product.id }}</td>
                 <td>{{ product.model }}</td>
                 <td>{{ product.manufacturer }}</td>
-                <td>{{ product.price }}</td>
+                <td>${{ product.price }}</td>
                 <td>
                     <form action="{{ path('add_to_cart',{'product': product.id}) }}">
                         <input type="number" name="quantity" value="1"
@@ -40,5 +40,8 @@
         {% endfor %}
         </tbody>
     </table>
+    <div class="navigation">
+        {{ knp_pagination_render(pagination) }}
+    </div>
 
 {% endblock %}

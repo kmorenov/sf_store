@@ -37,7 +37,8 @@ class CategoryAdmin extends AbstractAdmin
 
     protected function configureListFields(ListMapper $listMapper)
     {
-        $listMapper->addIdentifier('id')
+        $listMapper
+            ->addIdentifier('id')
             ->add('parent')
             ->add('name')
             ->add('imageFile')//, FileType::class)
