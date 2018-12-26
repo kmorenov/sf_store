@@ -13,7 +13,7 @@
                                         {% if thirdLevel.parent and thirdLevel.parent.parent and thirdLevel.parent.id == secondLevel.id
                                             and thirdLevel.parent.parent.id == firstLevel.id %}
                                             <li class="hassubs"><a
-                                                        href="{{ path('product', {'productid' : thirdLevel.id}) }}">{{ thirdLevel }}
+                                                        href="{{ path('product', {'category' : thirdLevel.id}) }}">{{ thirdLevel }}
                                                     <i class="fas fa-chevron-right"></i></a>
                                                 <ul>
                                                     {% for product in thirdLevel.products %}
