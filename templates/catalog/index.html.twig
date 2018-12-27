@@ -12,7 +12,6 @@
             <tr>
                 <th>{{ knp_pagination_sortable(pagination, 'Id', 'p.id' )|raw }}</th>
                 <th>{{ knp_pagination_sortable(pagination, 'Model', 'p.model' )|raw }}</th>
-                <th>Manufacturer</th>
                 <th>{{ knp_pagination_sortable(pagination, 'Price', 'p.price' )|raw }}</th>
                 <th>Quantity</th>
             </tr>
@@ -23,7 +22,6 @@
             <tr>
                 <td>{{ product.id }}</td>
                 <td>{{ product.model }}</td>
-                <td>{{ product.manufacturer }}</td>
                 <td>${{ product.price }}</td>
                 <td>
                     <form action="{{ path('add_to_cart',{'product': product.id}) }}">

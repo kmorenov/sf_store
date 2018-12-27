@@ -22,7 +22,6 @@ class ProductAdmin extends AbstractAdmin
             ->tab('Product')
                 ->with('Content', ['class' => 'col-md-9'])
                     ->add('model')
-                    ->add('manufacturer')
                     ->add('price')
                     ->add('date_added')
                 ->end()
@@ -36,19 +35,19 @@ class ProductAdmin extends AbstractAdmin
 
     protected function configureDatagridFilters(DatagridMapper $datagridMapper)
     {
-        $datagridMapper->add('category')
+        $datagridMapper
+            >add('category')
             ->add('model')
-            ->add('manufacturer')
             ->add('price')
             ->add('date_added');
     }
 
     protected function configureListFields(ListMapper $listMapper)
     {
-        $listMapper->addIdentifier('id')
+        $listMapper
+            ->addIdentifier('id')
             ->add('category')
             ->add('model')
-            ->add('manufacturer')
             ->add('price')
             ->add('date_added');
     }

@@ -24,11 +24,6 @@ class Product
     private $model;
 
     /**
-     * @ORM\Column(type="string", length=255, nullable=true)
-     */
-    private $manufacturer;
-
-    /**
      * @ORM\Column(type="decimal", precision=10, scale=2, nullable=true)
      */
     private $price;

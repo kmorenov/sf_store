@@ -25,7 +25,6 @@ class DefaultController extends AbstractController
     {
 //         $this->denyAccessUnlessGranted('ORDER_VIEW', $orders);
 
-//        $orders = $this->getDoctrine()->getRepository('App:Orders')->findAll();
 //        $products = $productRepository->findAll();
 
         dump($role = $this->getUser()->getRoles()[0]);
@@ -35,9 +34,10 @@ class DefaultController extends AbstractController
         switch ($role) {
             case 'ROLE_SUPER_ADMIN':
                 return $this->redirectToRoute('admin_app_orderposition_list');
-            // logic to determine if the user can EDIT
-            // return true or false
+                // logic to determine if the user can EDIT
+                // return true or false
             case 'ROLE_ADMIN':
+                $orders = $this->getDoctrine()->getRepository('App:Orders')->findAll();
                 return $this->render('order/index.html.twig', compact('orders'));
             // logic to determine if the user can VIEW
             // return true or false

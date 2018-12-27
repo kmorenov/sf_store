@@ -22,7 +22,6 @@
         <b>Orders</b><br/>
         <ul>
             {% for o in orders %}
-                {% dump(o.orderPosition) %}
                 <li><b>{{ o.id }} {{ o.lastName }} {{ o.firstName }}  {{ o.email }} {{ o.createdAt | date('d/m/y  H:i') }}</b></li>
                     <ul>
                         {% for op in o.orderPosition %}
