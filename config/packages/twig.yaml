@@ -5,3 +5,5 @@ twig:
 
     globals:
         cart_manager_service: '@App\Service\CartManager'
+
+        product_images_service: '@App\Service\ProductImages'

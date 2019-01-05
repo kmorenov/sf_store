@@ -19,8 +19,6 @@ use App\Entity\Product;
 
 use Symfony\Component\HttpFoundation\Request;
 
-use Symfony\Component\HttpFoundation\Session\Session;
-
 use App\Repository\CategoryRepository;
 
 class CatalogController extends Controller
@@ -33,7 +31,6 @@ class CatalogController extends Controller
     {
 
         $categories = $this->getDoctrine()->getRepository(Category::class)->findAll();
-//        return $this->render('base.html.twig',  [compact('categories'), 'cartic' => 5]);
         return $this->render('catalog/shop.html.twig', compact('categories'));
     }
 
@@ -52,7 +49,7 @@ class CatalogController extends Controller
             2/*limit per page*/
         );
 
-
+        $pagination->setTemplate('@KnpPaginator/Pagination/twitter_bootstrap_v4_pagination.html.twig');
         return $this->render('catalog/index.html.twig', compact('pagination'));
     }
 
@@ -103,12 +100,8 @@ class CatalogController extends Controller
      */
     public function ordered(Request $request)
     {
-/*        $request = Request::createFromGlobals();
-        dump($request);
-        $product = $this->getDoctrine()->getRepository(Product::class)->findBy(['id' => $id]);*/
+//        $request = Request::createFromGlobals();
         $this->add_to_cart($request);
-        dump($this->cart);
-        dump($request);
         return $this->render('cart/order.html.twig', ['cart' => $this->cart]); //'request')); //'product'));
     }
 
@@ -118,11 +111,7 @@ class CatalogController extends Controller
     public function cart(Request $request)
     {
         $this->add_to_cart($request);
-        dump($this->cart);
-
         return $this->render('cart/cart.html.twig', ['cart' => $this->cart]);
-//        return $this->render('cart/cart.html.twig', compact('cart'));
-//        return $this->render('cart/order.html.twig', compact('cart'));
     }
 
 
@@ -131,8 +120,6 @@ class CatalogController extends Controller
         $session = $this->get('session');
         $cart = $session->get('cart');
 
-        dump($cart);
-        dump($request->get('productid'));
         if ($cart){ // && $request->get('quantity')){
             for ($i = 0; $i < count($cart); $i++) {
                 if ($cart[$i]['id'] == $request->get('productid')) {
@@ -162,11 +149,36 @@ class CatalogController extends Controller
     }
 
     /**
-     * @Route("/selected_category/{id}", name="selected_category")
+     * @Route("/selected-category/{id}", name="selected_category")
      */
     public function getSelectedCategory(CategoryRepository $categoryRepository, $id)
     {
-        $categories = $categoryRepository->findBy(['parent' => $id]);
-        return $this->render('catalog/selected_category.html.twig', ['categories' => $categories, 'id' => $id]);
+        $categories = $categoryRepository->getCategoriesBelow($id); //findBy(['parent' => $id]);
+        $selectedCategory = $categoryRepository->findOneBy(['id' => $id]);
+        return $this->render('catalog/selected_category.html.twig',
+            ['categories' => $categories, 'id' => $id,
+            'selectedCategory' => $selectedCategory]);
+    }
+
+    /**
+     * @Route("/selected-category-paged/{id}", name="selected_category_paged")
+     */
+    public function getSelectedCategoryPaged(CategoryRepository $categoryRepository, $id, Request $request)
+    {
+        $query = $categoryRepository->getCategoriesBelowPaged($id);
+        $paginator  = $this->get('knp_paginator');
+        $pagination = $paginator->paginate(
+            $query, /* query NOT result */
+            $request->query->getInt('page', 1)/*page number*/,
+            2/*limit per page*/
+        );
+
+        // parameters to template
+        $pagination->setTemplate('@KnpPaginator/Pagination/twitter_bootstrap_v4_pagination.html.twig');
+        $selectedCategory = $categoryRepository->findOneBy(['id' => $id]);
+        return $this->render('catalog/selected_category_paged.html.twig',
+            ['pagination' => $pagination,
+                'id' => $id,
+                'selectedCategory' => $selectedCategory,]);
     }
 }

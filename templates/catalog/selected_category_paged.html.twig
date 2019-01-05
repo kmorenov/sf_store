@@ -28,7 +28,8 @@
     </style>
     {% block stylesheets %}
         <link rel="stylesheet" type="text/css" href="{{ asset('styles/bootstrap4/bootstrap.min.css') }}">
-        <link href="{{ asset('plugins/fontawesome-free-5.0.1/css/fontawesome-all.css') }}" rel="stylesheet" type="text/css">
+        <link href="{{ asset('plugins/fontawesome-free-5.0.1/css/fontawesome-all.css') }}" rel="stylesheet"
+              type="text/css">
         <link rel="stylesheet" type="text/css" href="{{ asset('plugins/OwlCarousel2-2.2.1/owl.carousel.css') }}">
         <link rel="stylesheet" type="text/css" href="{{ asset('plugins/OwlCarousel2-2.2.1/owl.theme.default.css') }}">
         <link rel="stylesheet" type="text/css" href="{{ asset('plugins/OwlCarousel2-2.2.1/animate.css') }}">
@@ -39,8 +40,8 @@
     {% block back %}
         {{ parent() }}
     {% endblock %}
-
-    <a href="{{ path('selected_category_paged', {'id' : id, 'selectedCategory' : selectedCategory.name }) }}"> Paginated version </a>
+    {% dump(pagination) %}
+    <a href="{{ path('selected_category', {'id' : pagination.params.id}) }}"> Single Page version </a>
 
     <div><strong>{{ 'Category: ' ~ selectedCategory.name }}</strong></div>
     <div class="divTable">
@@ -53,41 +54,37 @@
             <div class="divCell">Quantity</div>
         </div>
 
-        {% for secondLevel in categories %}
-            {% if secondLevel.name %}
-                {% for product in secondLevel.products %}
-                    {% if product.category == secondLevel.name %}
-                            <div class="divRow">
-                                <div class="divCell" align="center">{{ product.id }}</div>
+        {% for item in pagination.items %}
 
-                                <div class="divCellImage">
-                                    {% for img in product.productImages %}
-                                        <img src= {{ '/images/products/' ~ img.filepath }}>
-                                    {% else %}
-                                        {{ '--no uploaded image--' }}
-                                    {% endfor %}
-                                </div>
-
-                                <div class="divCell">{{ secondLevel.name }}</div>
-
-                                <div class="divCell"><a
-                                            href="{{ path('article', {'productid' : product.id}) }}">{{ product.model }}</a>
-                                </div>
-
-                                <div class="divCell">{{ product.price }}</div>
-
-                                <div class="divCell">
-                                    <form action="{{ path('add_to_cart',{'product': product.id}) }}">
-                                        <input type="number" name="quantity" value="1"
-                                               min="1" max="5">
-                                        <button type="submit">Add</button>
-                                    </form>
-                                </div>
-                            </div>
-                    {% endif %}
-                {% endfor %}
-            {% endif %}
+            <div class="divRow">
+                <div class="divCell" align="center">{{ item.id }}</div>
+                <div class="divCellImage">
+                    {% set pis = product_images_service.getProductImages(item.id) %}
+                    {% for i in range (0,6) %}
+                        {% if pis[i] is defined %}
+                            <img src={{ '/images/products/' }}{{ pis[i].filepath }}>
+                        {% elseif i == 0 %}
+                            {{ '-- no image --' }}
+                        {% endif %}
+                    {% endfor %}
+                </div>
+                <div class="divCell">{{ item.name }}</div>
+                <div class="divCell">{{ item.model }}</div>
+                <div class="divCell">{{ item.price }}</div>
+                <div class="divCell">
+                    <form action="{{ path('add_to_cart',{'product': item.id}) }}">
+                        <input type="number" name="quantity" value="1"
+                               min="1" max="5">
+                        <button type="submit">Add</button>
+                    </form>
+                </div>
+            </div>
         {% endfor %}
+
+    </div>
+
+    <div class="navigation">
+        {{ knp_pagination_render(pagination) }}
     </div>
 
     {% block footer %}

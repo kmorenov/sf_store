@@ -28,14 +28,9 @@ class Category
     private $name;
 
     /**
-     * @ORM\ManyToOne(targetEntity="App\Entity\Category", inversedBy="children")
+     * @ORM\ManyToOne(targetEntity="App\Entity\Category")
      */
     private $parent;
-
-    /**
-     * @ORM\OneToMany(targetEntity="App\Entity\Category", mappedBy="parent")
-     */
-    private $children;
 
     /**
      * @ORM\OneToMany(targetEntity="App\Entity\Product", mappedBy="category")
@@ -64,7 +59,6 @@ class Category
 
     public function __construct()
     {
-        $this->children = new ArrayCollection();
         $this->products = new ArrayCollection();
     }
 
@@ -98,37 +92,6 @@ class Category
     public function setParent(?self $parent): self
     {
         $this->parent = $parent;
-
-        return $this;
-    }
-
-    /**
-     * @return Collection|Category[]
-     */
-    public function getChildren(): Collection
-    {
-        return $this->children;
-    }
-
-    public function addChild(Category $child): self
-    {
-        if (!$this->children->contains($child)) {
-            $this->children[] = $child;
-            $child->setCategory($this);
-        }
-
-        return $this;
-    }
-
-    public function removeChild(Category $child): self
-    {
-        if ($this->children->contains($child)) {
-            $this->children->removeElement($child);
-            // set the owning side to null (unless already changed)
-            if ($child->getCategory() === $this) {
-                $child->setCategory(null);
-            }
-        }
 
         return $this;
     }

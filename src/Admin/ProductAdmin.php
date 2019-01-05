@@ -36,7 +36,7 @@ class ProductAdmin extends AbstractAdmin
     protected function configureDatagridFilters(DatagridMapper $datagridMapper)
     {
         $datagridMapper
-            >add('category')
+            ->add('category')
             ->add('model')
             ->add('price')
             ->add('date_added');

@@ -17,7 +17,7 @@
             </tr>
         </thead>
         <tbody>
-
+        {% dump(pagination) %}
         {% for product in pagination %}
             <tr>
                 <td>{{ product.id }}</td>
