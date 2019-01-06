@@ -163,9 +163,10 @@ class CatalogController extends Controller
     /**
      * @Route("/selected-category-paged/{id}", name="selected_category_paged")
      */
-    public function getSelectedCategoryPaged(CategoryRepository $categoryRepository, $id, Request $request)
+    public function getSelectedCategoryPaged(CategoryRepository $categoryRepository, ProductRepository $productRepository,
+                                             $id, Request $request)
     {
-        $query = $categoryRepository->getCategoriesBelowPaged($id);
+        $query = $productRepository->getCategoriesBelowPaged($id); //$categoryRepository->getCategoriesBelowPaged($id);
         $paginator  = $this->get('knp_paginator');
         $pagination = $paginator->paginate(
             $query, /* query NOT result */

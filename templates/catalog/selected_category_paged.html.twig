@@ -9,16 +9,19 @@
             border-spacing: 5px; /*cellspacing:poor IE support for  this*/
             /* border-collapse:separate;*/
         }
+
         .divRow {
             display: table-row;
             width: auto;
         }
+
         .divCell {
             float: left; /*fix for  buggy browsers*/
             display: table-column;
             width: 120px;
             /*background-color: #ccc;*/
         }
+
         .divCellImage {
             float: left; /*fix for  buggy browsers*/
             display: table-column;
@@ -46,16 +49,16 @@
     <div><strong>{{ 'Category: ' ~ selectedCategory.name }}</strong></div>
     <div class="divTable">
         <div class="headRow">
-            <div class="divCell" align="center">Product ID</div>
+            <div class="divCell" align="center"> {{ knp_pagination_sortable(pagination, 'Product ID', 'p.id' )|raw }} </div>
             <div class="divCellImage">Product Image</div>
-            <div class="divCell">Brand</div>
-            <div class="divCell">Model</div>
-            <div class="divCell">Price</div>
+            <div class="divCell">{{ knp_pagination_sortable(pagination, 'Brand', 'c.name' )|raw }}</div>
+            <div class="divCell">{{ knp_pagination_sortable(pagination, 'Model', 'p.model' )|raw }}</div>
+            <div class="divCell">{{ knp_pagination_sortable(pagination, 'Price', 'p.price' )|raw }}</div>
             <div class="divCell">Quantity</div>
         </div>
 
         {% for item in pagination.items %}
-
+{% dump(item) %}
             <div class="divRow">
                 <div class="divCell" align="center">{{ item.id }}</div>
                 <div class="divCellImage">

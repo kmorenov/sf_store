@@ -6,8 +6,7 @@ use App\Entity\Category;
 use Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepository;
 use Symfony\Bridge\Doctrine\RegistryInterface;
 
-use Doctrine; //\ORM\EntityManager;
-
+use Doctrine;
 /**
  * @method Category|null find($id, $lockMode = null, $lockVersion = null)
  * @method Category|null findOneBy(array $criteria, array $orderBy = null)
@@ -31,26 +30,27 @@ class CategoryRepository extends ServiceEntityRepository
         return $dql;
     }
 
-    public function getCategoriesBelowPaged($id)
+ /*   public function getCategoriesBelowPaged($id)
     {
-/*        $dql = "SELECT p.id, c.name, p.model, p.price
+        $dql = "SELECT p.id, c.name, p.model, p.price
                 FROM App\Entity\Category c
                 JOIN App\Entity\Product p 
                 WHERE c.id = p.category
                 AND c.parent = $id";
+
         $query = $this->getEntityManager()->createQuery($dql);
-        return $query->getResult();*/
+        return $query->getResult();*
 
         $dql = $this->createQueryBuilder('c')
             ->join('c.products', 'p')
-            ->addSelect('p')
+//            ->addSelect('p')
             ->select('p.id, c.name, p.model, p.price')
             ->andWhere('c.parent = :id')
             ->setParameter('id', $id)
-            ->getQuery()
-            ->getResult();
+            ->getQuery();
+//            ->getResult();
         return $dql;
-    }
+    }*/
 
 /*    public function getCategoriesBelowQueryTEST($id)
     {

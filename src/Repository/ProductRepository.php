@@ -47,10 +47,21 @@ class ProductRepository extends ServiceEntityRepository
             ;
         }
 
-
-
         return $qb->getQuery();
     }
+
+    public function getCategoriesBelowPaged($id)
+    {
+        $dql = $this->createQueryBuilder('p')
+            ->join('p.category', 'c')
+//            ->addSelect('p')
+            ->select('p.id, c.name, p.model, p.price')
+            ->andWhere('c.parent = :id')
+            ->setParameter('id', $id);
+//            ->getQuery();
+        return $dql;
+    }
+
 
 //    /**
 //     * @return Product[] Returns an array of Product objects
