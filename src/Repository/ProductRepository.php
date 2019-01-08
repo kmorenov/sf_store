@@ -28,29 +28,26 @@ class ProductRepository extends ServiceEntityRepository
             ->join('p.category', 'cat')
             ->join('cat.parent', 'parent')
             ->andWhere('cat.name = :categoryName')
-            ->setParameter('categoryName', $category->getName())
-            ;
+            ->setParameter('categoryName', $category->getName());
 
         //minPrice
         if ($minPrice = $request->get('minPrice')) {
             $qb
                 ->andWhere('p.price >= :minPrice')
-                ->setParameter('minPrice', $minPrice)
-            ;
+                ->setParameter('minPrice', $minPrice);
         }
 
         //maxPrice
         if ($maxPrice = $request->get('maxPrice')) {
             $qb
                 ->andWhere('p.price <= :maxPrice')
-                ->setParameter('maxPrice', $maxPrice)
-            ;
+                ->setParameter('maxPrice', $maxPrice);
         }
 
         return $qb->getQuery();
     }
 
-    public function getCategoriesBelowPaged($id)
+    public function getCategoriesBelowPaged($id, $request)
     {
         $dql = $this->createQueryBuilder('p')
             ->join('p.category', 'c')
@@ -59,6 +56,25 @@ class ProductRepository extends ServiceEntityRepository
             ->andWhere('c.parent = :id')
             ->setParameter('id', $id);
 //            ->getQuery();
+
+        if ($maxPrice = $request->get('maxPrice')) {
+            $dql
+                ->andWhere('p.price <= :maxPrice')
+                ->setParameter('maxPrice', $maxPrice);
+        }
+
+        if ($minPrice = $request->get('minPrice')) {
+            $dql
+                ->andWhere('p.price >= :minPrice')
+                ->setParameter('minPrice', $minPrice);
+        }
+
+        if ($brand = $request->get('brand')) {
+            $dql
+                ->andWhere('c.name = :brand')
+                ->setParameter('brand', $brand);
+        }
+
         return $dql;
     }
 

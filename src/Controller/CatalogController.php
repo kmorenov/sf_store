@@ -166,7 +166,7 @@ class CatalogController extends Controller
     public function getSelectedCategoryPaged(CategoryRepository $categoryRepository, ProductRepository $productRepository,
                                              $id, Request $request)
     {
-        $query = $productRepository->getCategoriesBelowPaged($id); //$categoryRepository->getCategoriesBelowPaged($id);
+        $query = $productRepository->getCategoriesBelowPaged($id, $request); //$categoryRepository->getCategoriesBelowPaged($id);
         $paginator  = $this->get('knp_paginator');
         $pagination = $paginator->paginate(
             $query, /* query NOT result */
