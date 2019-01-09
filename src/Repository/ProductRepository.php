@@ -52,7 +52,7 @@ class ProductRepository extends ServiceEntityRepository
         $dql = $this->createQueryBuilder('p')
             ->join('p.category', 'c')
 //            ->addSelect('p')
-            ->select('p.id, c.name, p.model, p.price')
+            //->select('p.id, c.name, p.model, p.price')
             ->andWhere('c.parent = :id')
             ->setParameter('id', $id);
 //            ->getQuery();

@@ -57,25 +57,22 @@
             <div class="divCell">Quantity</div>
         </div>
 
-        {% for item in pagination.items %}
-{% dump(item) %}
+        {% for product in pagination.items %}
+{% dump(product) %}
             <div class="divRow">
-                <div class="divCell" align="center">{{ item.id }}</div>
+                <div class="divCell" align="center">{{ product.id }}</div>
                 <div class="divCellImage">
-                    {% set pis = product_images_service.getProductImages(item.id) %}
-                    {% for i in range (0,6) %}
-                        {% if pis[i] is defined %}
-                            <img src={{ '/images/products/' }}{{ pis[i].filepath }}>
-                        {% elseif i == 0 %}
-                            {{ '-- no image --' }}
-                        {% endif %}
+                    {% for img in product.productImages %}
+                        <img src= {{ '/images/products/' ~ img.filepath }}>
+                    {% else %}
+                        {{ '--no uploaded image--' }}
                     {% endfor %}
                 </div>
-                <div class="divCell">{{ item.name }}</div>
-                <div class="divCell">{{ item.model }}</div>
-                <div class="divCell">{{ item.price }}</div>
+                <div class="divCell">{{ product.category.name }}</div>
+                <div class="divCell">{{ product.model }}</div>
+                <div class="divCell">{{ product.price }}</div>
                 <div class="divCell">
-                    <form action="{{ path('add_to_cart',{'product': item.id}) }}">
+                    <form action="{{ path('add_to_cart',{'product': product.id}) }}">
                         <input type="number" name="quantity" value="1"
                                min="1" max="5">
                         <button type="submit">Add</button>

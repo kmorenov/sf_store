@@ -31,9 +31,6 @@ services:
     App\Service\CartManager:
         public: true
 
-    App\Service\ProductImages:
-        public: true
-
     admin.product:
         class: App\Admin\ProductAdmin
         arguments: [~, App\Entity\Product, ~]
